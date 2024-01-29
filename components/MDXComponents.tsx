@@ -7,6 +7,8 @@ import CustomLink from './Link'
 import TableWrapper from './TableWrapper'
 import Audioplayer from './Audioplayer'
 
+import Chart from './custom/Chart'
+
 export const components: MDXComponents = {
   Image,
   TOCInline,
@@ -15,4 +17,5 @@ export const components: MDXComponents = {
   table: TableWrapper,
   BlogNewsletterForm,
   Audioplayer,
+  Chart,
 }
