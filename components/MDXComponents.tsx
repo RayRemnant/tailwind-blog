@@ -6,6 +6,9 @@ import Image from './Image'
 import CustomLink from './Link'
 import TableWrapper from './TableWrapper'
 
+//my components
+import Chart from './custom/Chart'
+
 export const components: MDXComponents = {
   Image,
   TOCInline,
@@ -13,4 +16,5 @@ export const components: MDXComponents = {
   pre: Pre,
   table: TableWrapper,
   BlogNewsletterForm,
+  Chart,
 }
