@@ -17,14 +17,14 @@ const siteMetadata = {
   linkedin: 'https://www.linkedin.com/in/benoit-tremblay-b4197422/',
   threads: 'https://threads.net/@bendotcodes',
   locale: 'en-US',
-  analytics: {
+  /* analytics: {
     googleAnalytics: {
       googleAnalyticsId: 'G-7LG3NNV50C',
     },
-  },
-  newsletter: {
+  }, */
+  /* newsletter: {
     provider: 'mailchimp',
-  },
+  }, */
   comments: {
     provider: 'giscus',
     giscusConfig: {
