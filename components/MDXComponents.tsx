@@ -5,10 +5,14 @@ import type { MDXComponents } from 'mdx/types'
 import Image from './Image'
 import CustomLink from './Link'
 
+//my components
+import Chart from './custom/Chart'
+
 export const components: MDXComponents = {
   Image,
   TOCInline,
   a: CustomLink,
   pre: Pre,
   BlogNewsletterForm,
+  Chart,
 }
