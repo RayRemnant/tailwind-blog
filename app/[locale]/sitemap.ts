@@ -1,10 +1,10 @@
 import { MetadataRoute } from 'next'
 import { allBlogs } from 'contentlayer/generated'
 import siteMetadata from '@/data/siteMetadata'
-import { fallbackLng, secondLng } from './i18n/locales'
+import { fallbackLng, secondLng, thirdLng } from './i18n/locales'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const locales = [fallbackLng, secondLng]
+  const locales = [fallbackLng, secondLng, thirdLng]
   const siteUrl = siteMetadata.siteUrl
 
   // blog route for english
@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: post.lastmod || post.date,
     }))
 
-  // blog route for french (or your own second language)
+  // blog route for italian (
   const secondBlogRoutes = allBlogs
     .filter((p) => p.language === secondLng)
     .map((post) => ({
@@ -23,7 +23,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: post.lastmod || post.date,
     }))
 
-  const BlogRoutes = [...firstBlogRoutes, ...secondBlogRoutes].map((route) => ({
+  const thirdBlogRoutes = allBlogs
+    .filter((p) => p.language === thirdLng)
+    .map((post) => ({
+      url: `${siteUrl}/${thirdLng}/${post.path}`,
+      lastModified: post.lastmod || post.date,
+    }))
+
+  const BlogRoutes = [...firstBlogRoutes, ...secondBlogRoutes, ...thirdBlogRoutes].map((route) => ({
     ...route,
   }))
 

@@ -29,6 +29,24 @@ const projectsData: ProjectsData = {
     },
   ],
 
+  it: [
+    {
+      title: 'Un motore di ricerca',
+      description: `Et si vous pouviez rechercher n'importe quelle information dans le monde ? Pages Web, images, vidéos
+        et plus. Google propose de nombreuses fonctionnalités pour vous aider à trouver exactement ce que vous cherchez.`,
+      imgSrc: '/static/images/google.png',
+      href: 'https://www.google.com',
+    },
+    {
+      title: 'La Machine à remonter le temps',
+      description: `Imaginez pouvoir voyager dans le temps ou vers le futur. Tournez simplement le bouton
+        à la date souhaitée et appuyez sur "Go". Ne vous inquiétez plus des clés perdues ou
+        écouteurs oubliés avec cette solution simple mais abordable.`,
+      imgSrc: '/static/images/time-machine.jpg',
+      href: '/blog/articles/la-machine-a-remonter-le-temps',
+    },
+  ],
+
   fr: [
     {
       title: 'Un moteur de recherche',

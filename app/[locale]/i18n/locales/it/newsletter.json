@@ -1,0 +1,9 @@
+{
+  "mail": "Indirizzo Email",
+  "title": "Iscriviti alla newsletter",
+  "messageError": "La tua mail non è valida o sei giá iscritto!",
+  "placeholderSuccess": "Sei iscritto!  🎉",
+  "placeholderDefault": "Inserisci l'email",
+  "buttonSuccess": "Grazie!",
+  "buttonDefault": "Iscriviti"
+}

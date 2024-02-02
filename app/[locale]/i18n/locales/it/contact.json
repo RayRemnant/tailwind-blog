@@ -1,0 +1,9 @@
+{
+  "name": "Nome*",
+  "title": "Contattami",
+  "mail": "Email*",
+  "button": "Invia",
+  "error": "Oops, qualcosa è andato storto!",
+  "thanks": "Grazie per avermi contattato, risponderó al piú presto!",
+  "message": "Messaggio*"
+}

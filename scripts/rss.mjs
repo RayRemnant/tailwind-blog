@@ -30,10 +30,9 @@ const generateRss = (config, posts, locale, page = 'feed.xml') => `
       <language>${locale}</language>
       <managingEditor>${config.email} (${config.author})</managingEditor>
       <webMaster>${config.email} (${config.author})</webMaster>
-      ${
-        posts.date &&
-        `<lastBuildDate>${new Date(posts[0].date).toLocaleDateString(locale)}</lastBuildDate>`
-      }
+      ${posts.date &&
+  `<lastBuildDate>${new Date(posts[0].date).toLocaleDateString(locale)}</lastBuildDate>`
+  }
       <atom:link href="${config.siteUrl}/${page}" rel="self" type="application/rss+xml"/>
       ${posts.map((post) => generateRssItem(config, post, locale, defaultLocale)).join('')}
     </channel>
@@ -66,7 +65,7 @@ async function generateRSS(config, allBlogs, locale, page = 'feed.xml') {
 }
 
 const rss = () => {
-  const locales = ['en', 'fr']
+  const locales = ['en', 'it', 'fr']
   for (const locale of locales) {
     generateRSS(siteMetadata, allBlogs, locale)
   }

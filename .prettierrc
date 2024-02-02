@@ -1,0 +1,14 @@
+{
+    "printWidth": 120,
+    "semi": false,
+    "overrides": [
+        {
+            "files": [
+                "*.mdx"
+            ],
+            "options": {
+                "printWidth": 400
+            }
+        }
+    ]
+}

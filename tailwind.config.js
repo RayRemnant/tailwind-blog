@@ -11,6 +11,7 @@ module.exports = {
     './components/**/*.{js,ts,tsx}',
     './layouts/**/*.{js,ts,tsx}',
     './data/**/*.mdx',
+    './node_modules/@nextui-org/theme/dist/components/(button|snippet|code|input).js',
   ],
   darkMode: 'class',
   theme: {
