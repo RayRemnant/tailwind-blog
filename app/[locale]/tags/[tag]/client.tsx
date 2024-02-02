@@ -24,10 +24,10 @@ export default function ClientTagPage({ params: { tag, locale } }: TagsProps) {
     sortPosts(
       allBlogs.filter((post) => {
         return post.language === locale
-      })
+      }),
     ).filter((post) => {
       return post.tags && post.tags.map((t) => slug(t)).includes(dtag)
-    })
+    }),
   )
 
   const loadMorePosts = () => {
@@ -47,8 +47,7 @@ export default function ClientTagPage({ params: { tag, locale } }: TagsProps) {
       if (
         innerHeight &&
         document.documentElement &&
-        document.documentElement.scrollHeight - innerHeight <=
-          document.documentElement.scrollTop + 10 &&
+        document.documentElement.scrollHeight - innerHeight <= document.documentElement.scrollTop + 10 &&
         !loading
       ) {
         loadMorePosts()
@@ -62,11 +61,5 @@ export default function ClientTagPage({ params: { tag, locale } }: TagsProps) {
     }
   }, [loading])
 
-  return (
-    <ListLayout
-      posts={filteredPosts.slice(0, numPostsToShow)}
-      title={title}
-      params={{ locale: locale }}
-    />
-  )
+  return <ListLayout posts={filteredPosts.slice(0, numPostsToShow)} title={title} params={{ locale: locale }} />
 }

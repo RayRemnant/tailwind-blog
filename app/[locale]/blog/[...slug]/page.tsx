@@ -53,22 +53,16 @@ async function getPostFromParams({ params: { slug, locale } }: BlogPageProps): P
   return post
 }
 
-export async function generateMetadata({
-  params: { slug, locale },
-}: BlogPageProps): Promise<Metadata | undefined> {
+export async function generateMetadata({ params: { slug, locale } }: BlogPageProps): Promise<Metadata | undefined> {
   const dslug = decodeURI(slug.join('/'))
   const post = allBlogs.find((p) => p.slug === dslug && p.language === locale) as Blog
   if (!post) {
     return
   }
-  const author = allAuthors
-    .filter((a) => a.language === locale)
-    .find((a) => a.slug.includes('default'))
+  const author = allAuthors.filter((a) => a.language === locale).find((a) => a.slug.includes('default'))
   const authorList = post.authors || author
   const authorDetails = authorList.map((author) => {
-    const authorResults = allAuthors
-      .filter((a) => a.language === locale)
-      .find((a) => a.slug.includes(author))
+    const authorResults = allAuthors.filter((a) => a.language === locale).find((a) => a.slug.includes(author))
     return coreContent(authorResults as Authors)
   })
   const publishedAt = new Date(post.date).toISOString()
@@ -116,9 +110,7 @@ export const generateStaticParams = async () => {
 export default async function Page({ params: { slug, locale } }: BlogPageProps) {
   const dslug = decodeURI(slug.join('/'))
   // Filter out drafts in production + locale filtering
-  const sortedCoreContents = allCoreContent(
-    sortPosts(allBlogs.filter((p) => p.language === locale))
-  )
+  const sortedCoreContents = allCoreContent(sortPosts(allBlogs.filter((p) => p.language === locale)))
   const postIndex = sortedCoreContents.findIndex((p) => p.slug === dslug)
   if (postIndex === -1) {
     return notFound()
@@ -127,14 +119,10 @@ export default async function Page({ params: { slug, locale } }: BlogPageProps) 
   const prev = sortedCoreContents[postIndex + 1]
   const next = sortedCoreContents[postIndex - 1]
   const post = await getPostFromParams({ params: { slug, locale } })
-  const author = allAuthors
-    .filter((a) => a.language === locale)
-    .find((a) => a.slug.includes('default'))
+  const author = allAuthors.filter((a) => a.language === locale).find((a) => a.slug.includes('default'))
   const authorList = post.authors || author
   const authorDetails = authorList.map((author) => {
-    const authorResults = allAuthors
-      .filter((a) => a.language === locale)
-      .find((a) => a.slug.includes(author))
+    const authorResults = allAuthors.filter((a) => a.language === locale).find((a) => a.slug.includes(author))
     return coreContent(authorResults as Authors)
   })
   const mainContent = coreContent(post)
@@ -150,17 +138,8 @@ export default async function Page({ params: { slug, locale } }: BlogPageProps) 
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <Layout
-        content={mainContent}
-        authorDetails={authorDetails}
-        next={next}
-        prev={prev}
-        params={{ locale: locale }}
-      >
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <Layout content={mainContent} authorDetails={authorDetails} next={next} prev={prev} params={{ locale: locale }}>
         <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} />
       </Layout>
     </>

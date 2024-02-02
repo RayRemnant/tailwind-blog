@@ -44,8 +44,7 @@ const item = {
 function Pagination({ totalPages, currentPage, params: { locale } }: PaginationProps) {
   const { t } = useTranslation(locale, 'home')
   const pathname = usePathname()
-  const basePath =
-    locale === fallbackLng ? pathname.split('/')[1] : pathname.split('/').slice(1, 3).join('/')
+  const basePath = locale === fallbackLng ? pathname.split('/')[1] : pathname.split('/').slice(1, 3).join('/')
   const prevPage = currentPage - 1 > 0
   const nextPage = currentPage + 1 <= totalPages
 
@@ -58,10 +57,7 @@ function Pagination({ totalPages, currentPage, params: { locale } }: PaginationP
           </button>
         )}
         {prevPage && (
-          <Link
-            href={currentPage - 1 === 1 ? `/${basePath}/` : `/${basePath}/page/${currentPage - 1}`}
-            rel="prev"
-          >
+          <Link href={currentPage - 1 === 1 ? `/${basePath}/` : `/${basePath}/page/${currentPage - 1}`} rel="prev">
             {t('prevp')}
           </Link>
         )}
@@ -98,8 +94,7 @@ export default function ListLayout({
   })
 
   // If initialDisplayPosts exist, display it if no searchValue is specified
-  const displayPosts =
-    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
+  const displayPosts = initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
 
   return (
     <>
@@ -157,9 +152,7 @@ export default function ListLayout({
                           </Link>
                         </h3>
                         <div className="flex flex-wrap">
-                          {tags?.map((tag) => (
-                            <Tag key={tag} text={tag} params={{ locale: locale }} />
-                          ))}
+                          {tags?.map((tag) => <Tag key={tag} text={tag} params={{ locale: locale }} />)}
                         </div>
                       </div>
                       <div className="prose max-w-none text-gray-500 dark:text-gray-400">

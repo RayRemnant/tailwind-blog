@@ -102,12 +102,7 @@ export const ContactModal = (): JSX.Element => {
 
   return (
     <>
-      <CModal
-        title={t('title')}
-        isOpen={contactModal.isOpen}
-        onClose={contactModal.onClose}
-        body={bodyContent}
-      />
+      <CModal title={t('title')} isOpen={contactModal.isOpen} onClose={contactModal.onClose} body={bodyContent} />
       <ToastContainer autoClose={2000} />
     </>
   )

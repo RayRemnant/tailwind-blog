@@ -12,8 +12,8 @@ const initI18next = async (lang: LocaleTypes, ns: string) => {
       resourcesToBackend(
         (language: string, namespace: typeof ns) =>
           // load the translation file depending on the language and namespace
-          import(`./locales/${language}/${namespace}.json`)
-      )
+          import(`./locales/${language}/${namespace}.json`),
+      ),
     )
     .init(getOptions(lang, ns))
 

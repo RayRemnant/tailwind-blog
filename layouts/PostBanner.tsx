@@ -22,16 +22,9 @@ interface PostBannerProps {
   params: { locale: LocaleTypes }
 }
 
-export default function PostMinimal({
-  content,
-  next,
-  prev,
-  children,
-  params: { locale },
-}: PostBannerProps) {
+export default function PostMinimal({ content, next, prev, children, params: { locale } }: PostBannerProps) {
   const { slug, title, images, series } = content
-  const displayImage =
-    images && images.length > 0 ? images[0] : 'https://picsum.photos/seed/picsum/800/400'
+  const displayImage = images && images.length > 0 ? images[0] : 'https://picsum.photos/seed/picsum/800/400'
 
   return (
     <SectionContainer>

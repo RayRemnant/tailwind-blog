@@ -57,9 +57,7 @@ export default async function PostLayout({
                 <div>
                   <dt className="sr-only">{t('pub')}</dt>
                   <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                    <time dateTime={date}>
-                      {new Date(date).toLocaleDateString(language, postDateTemplate)}
-                    </time>
+                    <time dateTime={date}>{new Date(date).toLocaleDateString(language, postDateTemplate)}</time>
                   </dd>
                 </div>
               </dl>
@@ -119,23 +117,16 @@ export default async function PostLayout({
                 <Link href={editUrl(filePath)}>{t('github')}</Link>
               </div>
               <Share title={title} slug={slug} />
-              <div
-                className="mt-10 pb-6 pt-6 text-center text-gray-700 dark:text-gray-300"
-                id="comment"
-              >
+              <div className="mt-10 pb-6 pt-6 text-center text-gray-700 dark:text-gray-300" id="comment">
                 {siteMetadata.iswaline === true && <WalineComments />}
-                {siteMetadata.comments && siteMetadata.iscomments === true && (
-                  <Comments slug={slug} />
-                )}
+                {siteMetadata.comments && siteMetadata.iscomments === true && <Comments slug={slug} />}
               </div>
             </div>
             <footer>
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                 {tags && (
                   <div className="py-4 xl:py-8">
-                    <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                      Tags
-                    </h2>
+                    <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Tags</h2>
                     <div className="flex flex-wrap">
                       {tags.map((tag) => (
                         <Tag key={tag} text={tag} params={{ locale: locale }} />

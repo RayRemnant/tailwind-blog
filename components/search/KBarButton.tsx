@@ -11,9 +11,10 @@ interface KbarButtonProps {
  *
  * @return {*}
  */
-export const KBarButton: React.FC<
-  DetailedHTMLProps<HTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
-> = ({ children, ...rest }: KbarButtonProps) => {
+export const KBarButton: React.FC<DetailedHTMLProps<HTMLAttributes<HTMLButtonElement>, HTMLButtonElement>> = ({
+  children,
+  ...rest
+}: KbarButtonProps) => {
   const { query } = useKBar()
 
   return (

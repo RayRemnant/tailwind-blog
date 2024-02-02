@@ -37,10 +37,7 @@ const Card: React.FC<CardProps> = ({ title, description, imgSrc, href }) => {
       >
         {imgSrc &&
           (href ? (
-            <Link
-              href={href.startsWith('http') ? href : `/${locale}${href}`}
-              aria-label={`${t('linkto')}${title}`}
-            >
+            <Link href={href.startsWith('http') ? href : `/${locale}${href}`} aria-label={`${t('linkto')}${title}`}>
               <Image
                 alt={title}
                 src={imgSrc}
@@ -61,10 +58,7 @@ const Card: React.FC<CardProps> = ({ title, description, imgSrc, href }) => {
         <div className="p-6">
           <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight">
             {href ? (
-              <Link
-                href={href.startsWith('http') ? href : `/${locale}${href}`}
-                aria-label={`${t('linkto')}${title}`}
-              >
+              <Link href={href.startsWith('http') ? href : `/${locale}${href}`} aria-label={`${t('linkto')}${title}`}>
                 {title}
               </Link>
             ) : (

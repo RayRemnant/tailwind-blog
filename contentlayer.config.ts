@@ -51,8 +51,7 @@ async function generateSlugMap(allBlogs) {
   // Process each blog post
   allBlogs.forEach((blog) => {
     const { localeid, language, slug } = blog
-    const formattedLng =
-      language === fallbackLng ? fallbackLng : language === secondLng ? secondLng : thirdLng
+    const formattedLng = language === fallbackLng ? fallbackLng : language === secondLng ? secondLng : thirdLng
 
     if (!slugMap[localeid]) {
       slugMap[localeid] = {}
@@ -96,13 +95,10 @@ function createTagCount(allBlogs) {
 }
 
 function createSearchIndex(allBlogs) {
-  if (
-    siteMetadata?.search?.provider === 'kbar' &&
-    siteMetadata.search.kbarConfig.searchDocumentsPath
-  ) {
+  if (siteMetadata?.search?.provider === 'kbar' && siteMetadata.search.kbarConfig.searchDocumentsPath) {
     writeFileSync(
       `public/${siteMetadata.search.kbarConfig.searchDocumentsPath}`,
-      JSON.stringify(allCoreContent(sortPosts(allBlogs)))
+      JSON.stringify(allCoreContent(sortPosts(allBlogs))),
     )
     console.log('Local search index generated...')
   }
@@ -185,13 +181,7 @@ export default makeSource({
   documentTypes: [Blog, Authors],
   mdx: {
     cwd: process.cwd(),
-    remarkPlugins: [
-      remarkExtractFrontmatter,
-      remarkGfm,
-      remarkCodeTitles,
-      remarkMath,
-      remarkImgToJsx,
-    ],
+    remarkPlugins: [remarkExtractFrontmatter, remarkGfm, remarkCodeTitles, remarkMath, remarkImgToJsx],
     rehypePlugins: [
       rehypeSlug,
       rehypeAutolinkHeadings,

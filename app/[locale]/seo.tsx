@@ -12,13 +12,7 @@ interface PageSEOProps {
   [key: string]: any
 }
 
-export function genPageMetadata({
-  title,
-  description,
-  image,
-  params: { locale },
-  ...rest
-}: PageSEOProps): Metadata {
+export function genPageMetadata({ title, description, image, params: { locale }, ...rest }: PageSEOProps): Metadata {
   return {
     title,
     openGraph: {

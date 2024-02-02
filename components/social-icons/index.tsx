@@ -1,15 +1,4 @@
-import {
-  Mail,
-  Github,
-  Facebook,
-  Youtube,
-  Linkedin,
-  Twitter,
-  X,
-  Mastodon,
-  Whatsapp,
-  Telegram,
-} from './icons'
+import { Mail, Github, Facebook, Youtube, Linkedin, Twitter, X, Mastodon, Whatsapp, Telegram } from './icons'
 import siteMetadata from '@/data/siteMetadata'
 
 // Twitter icon replaced with "X" brand. If you prefer the blue bird icon, replace the X with "twitter" instead

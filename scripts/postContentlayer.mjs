@@ -15,8 +15,7 @@ export async function generateSlugMap() {
   // Process each blog post
   allBlogs.forEach((blog) => {
     const { localeid, language, slug } = blog
-    const formattedLng =
-      language === fallbackLng ? fallbackLng : language == secondLng ? secondLng : thirdLng
+    const formattedLng = language === fallbackLng ? fallbackLng : language == secondLng ? secondLng : thirdLng
 
     if (!slugMap[localeid]) {
       slugMap[localeid] = {}
@@ -58,13 +57,10 @@ export async function createTagCount() {
 }
 
 export async function createSearchIndex() {
-  if (
-    siteMetadata?.search?.provider === 'kbar' &&
-    siteMetadata.search.kbarConfig.searchDocumentsPath
-  ) {
+  if (siteMetadata?.search?.provider === 'kbar' && siteMetadata.search.kbarConfig.searchDocumentsPath) {
     writeFileSync(
       `public/${siteMetadata.search.kbarConfig.searchDocumentsPath}`,
-      JSON.stringify(allCoreContent(sortPosts(allBlogs)))
+      JSON.stringify(allCoreContent(sortPosts(allBlogs))),
     )
     console.log('Local search index generated...')
   }

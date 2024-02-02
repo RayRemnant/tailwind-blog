@@ -11,15 +11,12 @@ export function middleware(request: NextRequest) {
     // e.g. incoming request is /en/about
     // The new URL is now /about
     return NextResponse.redirect(
-      new URL(
-        pathname.replace(`/${fallbackLng}`, pathname === `/${fallbackLng}` ? '/' : ''),
-        request.url
-      )
+      new URL(pathname.replace(`/${fallbackLng}`, pathname === `/${fallbackLng}` ? '/' : ''), request.url),
     )
   }
 
   const pathnameIsMissingLocale = locales.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
   )
 
   if (pathnameIsMissingLocale) {

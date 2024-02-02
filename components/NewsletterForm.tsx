@@ -51,9 +51,7 @@ const NewsletterForm = ({ apiUrl = '/api/newsletter' }: NewsletterFormProps) => 
 
   return (
     <div>
-      <div className="pb-1 text-lg font-semibold text-gray-800 dark:text-gray-100">
-        {t('title')}
-      </div>
+      <div className="pb-1 text-lg font-semibold text-gray-800 dark:text-gray-100">{t('title')}</div>
       <form className="flex flex-col sm:flex-row" onSubmit={subscribe}>
         <div>
           <label htmlFor="email-input">
@@ -83,9 +81,7 @@ const NewsletterForm = ({ apiUrl = '/api/newsletter' }: NewsletterFormProps) => 
           </button>
         </div>
       </form>
-      {error && (
-        <div className="w-72 pt-2 text-sm text-red-500 dark:text-red-400 sm:w-96">{message}</div>
-      )}
+      {error && <div className="w-72 pt-2 text-sm text-red-500 dark:text-red-400 sm:w-96">{message}</div>}
     </div>
   )
 }

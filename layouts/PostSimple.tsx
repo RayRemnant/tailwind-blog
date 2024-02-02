@@ -22,13 +22,7 @@ interface PostSimpleProps {
   params: { locale: LocaleTypes }
 }
 
-export default async function PostLayout({
-  content,
-  next,
-  prev,
-  children,
-  params: { locale },
-}: PostSimpleProps) {
+export default async function PostLayout({ content, next, prev, children, params: { locale } }: PostSimpleProps) {
   const { slug, date, title, language, series } = content
   const { t } = await createTranslation(locale, 'home')
   return (
@@ -63,9 +57,7 @@ export default async function PostLayout({
             <Share title={title} slug={slug} />
             <div className="pb-6 pt-6 text-center text-gray-700 dark:text-gray-300" id="comment">
               {siteMetadata.iswaline === true && <WalineComments />}
-              {siteMetadata.comments && siteMetadata.iscomments === true && (
-                <Comments slug={slug} />
-              )}
+              {siteMetadata.comments && siteMetadata.iscomments === true && <Comments slug={slug} />}
             </div>
             <footer>
               <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">

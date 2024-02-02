@@ -1,14 +1,14 @@
 {
   "gpuchart": {
+    "it": "articoli/gpu-chart",
     "en": "posts/gpu-chart",
-    "it": "articoli/prova",
     "fr": "articles/route-imbriquee/gpu-chart"
-  },
-  "best-psu-pc": {
-    "it": "articoli/miglior-alimentatore-pc"
   },
   "best-case-pc": {
     "it": "articoli/miglior-case-pc"
+  },
+  "nope": {
+    "it": "articoli/prova"
   },
   "nestedroutes": {
     "en": "posts/nested-route/introducing-multi-part-posts-with-nested-routing"
