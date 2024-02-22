@@ -35,3 +35,8 @@ input:-webkit-autofill:focus {
 .katex-display {
   overflow: auto hidden;
 }
+
+img {
+  height: fit-content;
+  border-radius: 3px;
+}
