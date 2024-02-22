@@ -1,11 +1,17 @@
 {
+  "best-psu-pc": {
+    "it": "articoli/miglior-alimentatore-pc"
+  },
+  "best-case-pc": {
+    "it": "articoli/miglior-case-pc"
+  },
+  "thingssss": {
+    "en": "IDEAS"
+  },
   "gpuchart": {
     "it": "articoli/gpu-chart",
     "en": "posts/gpu-chart",
     "fr": "articles/route-imbriquee/gpu-chart"
-  },
-  "best-case-pc": {
-    "it": "articoli/miglior-case-pc"
   },
   "nope": {
     "it": "articoli/prova"
