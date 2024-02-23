@@ -24,7 +24,7 @@ const Header = () => {
         <div>
           <Link href={`/${locale}/`} aria-label={siteMetadata.headerTitle}>
             <div className="flex items-center justify-between">
-              <div className="mr-3">
+              <div className="mr-3  dark:invert">
                 <Logo />
               </div>
               {typeof siteMetadata.headerTitle === 'string' ? (

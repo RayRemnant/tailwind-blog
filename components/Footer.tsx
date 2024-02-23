@@ -37,7 +37,7 @@ export default function Footer() {
                 </button>
               )}
             </div>
-            <div className="flex items-center">
+            {/*  <div className="flex items-center">
               <SocialIcon kind="github" href={siteMetadata.github} size={6} />
             </div>
             <div className="flex items-center">
@@ -51,12 +51,14 @@ export default function Footer() {
             </div>
             <div className="flex items-center">
               <SocialIcon kind="twitter" href={siteMetadata.twitter} size={6} />
-            </div>
+            </div> */}
           </div>
           <div className="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-            <div>{siteMetadata.author}</div>
-            <div>{` • `}</div>
-            <div>{`© ${new Date().getFullYear()}`}</div>
+            <div>
+              <a target="_blank" href={`https://creativecommons.org/licenses/by/4.0/deed.${locale}`}>
+                Creative Commons Attribution 4.0
+              </a>
+            </div>
             <div>{` • `}</div>
             <Link href="/">{siteMetadata.title}</Link>
           </div>

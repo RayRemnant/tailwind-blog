@@ -3,13 +3,13 @@ type Metadata = {
 }
 
 export const maintitle: Metadata = {
-  en: 'Next.js i18n Starter Blog',
-  it: 'Next.js i18n Starter Blog',
-  fr: 'Starter Blog Next.js i18n',
+  en: 'Omni Atlas | Knowledge made simple.',
+  it: 'Omni Atlas | Conoscenza fatta semplice.',
+  //fr: 'Starter Blog Next.js i18n',
 }
 
 export const maindescription: Metadata = {
-  en: 'A blog created with Next.js, i18n and Tailwind.css',
-  it: 'Omni Atlas',
-  fr: 'Un blog crée avec tailwind, i18n et next.js',
+  en: 'An evolving atlas to guide your decisions.',
+  it: 'Una mappa per orientare le tue decisioni.',
+  //fr: 'Un blog crée avec tailwind, i18n et next.js',
 }

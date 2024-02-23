@@ -1,17 +1,18 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Next.js i18n Starter Blog',
-  author: 'Tails Azimuth',
-  headerTitle: 'TailwindBlog',
-  description: 'A blog created with Next.js, i18n and Tailwind.css',
+  title: 'Omni Atlas | Knowledge made simple.',
+  author: '',
+  headerTitle: 'Omni Atlas',
+  description:
+    'Omni Atlas. Data, information, knowledge. An open library based on collaboration. An evolving atlas to guide your decisions.',
   language: 'en',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog-i18n.vercel.app',
-  siteRepo: 'https://github.com/PxlSyl/tailwind-nextjs-starter-blog-i18n',
+  siteRepo: '',
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png',
-  mastodon: 'https://mastodon.social/@mastodonuser',
-  email: 'address@yoursite.com',
+  mastodon: '',
+  email: 'rayremnant.me@gmail.com',
   github: 'https://github.com',
   twitter: 'https://twitter.com/Twitter',
   facebook: 'https://facebook.com',

@@ -47,7 +47,7 @@ const projectsData: ProjectsData = {
     },
   ],
 
-  fr: [
+  /*   fr: [
     {
       title: 'Un moteur de recherche',
       description: `Et si vous pouviez rechercher n'importe quelle information dans le monde ? Pages Web, images, vidéos
@@ -63,7 +63,7 @@ const projectsData: ProjectsData = {
       imgSrc: '/static/images/time-machine.jpg',
       href: '/blog/articles/la-machine-a-remonter-le-temps',
     },
-  ],
+  ], */
 }
 
 export default projectsData

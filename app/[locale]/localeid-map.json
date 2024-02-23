@@ -1,6 +1,11 @@
 {
-  "best-ssd": {
-    "it": "articoli/miglior-ssd"
+  "thingssss": {
+    "en": "IDEAS"
+  },
+  "gpuchart": {
+    "it": "articoli/gpu-chart",
+    "en": "posts/gpu-chart",
+    "es": "articles/route-imbriquee/gpu-chart"
   },
   "best-psu-pc": {
     "it": "articoli/miglior-alimentatore-pc"
@@ -8,13 +13,11 @@
   "best-case-pc": {
     "it": "articoli/miglior-case-pc"
   },
-  "thingssss": {
-    "en": "IDEAS"
+  "best-ssd-ark": {
+    "it": "articoli/miglior-ssd-old"
   },
-  "gpuchart": {
-    "it": "articoli/gpu-chart",
-    "en": "posts/gpu-chart",
-    "fr": "articles/route-imbriquee/gpu-chart"
+  "best-ssd": {
+    "it": "articoli/miglior-ssd"
   },
   "nope": {
     "it": "articoli/prova"
