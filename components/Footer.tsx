@@ -2,6 +2,7 @@
 
 import Link from './Link'
 import siteMetadata from '@/data/siteMetadata'
+import { maintitle } from '@/data/localeMetadata'
 import SocialIcon from '@/components/social-icons'
 
 import { useParams } from 'next/navigation'
@@ -60,7 +61,7 @@ export default function Footer() {
               </a>
             </div>
             <div>{` • `}</div>
-            <Link href="/">{siteMetadata.title}</Link>
+            <Link href="/">{maintitle[locale]}</Link>
           </div>
           <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
             <Link href="https://github.com/PxlSyl/tailwind-nextjs-starter-blog-i18n">{t('theme')}</Link>
