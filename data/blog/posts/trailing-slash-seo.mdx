@@ -1,0 +1,78 @@
+---
+title: Trailing Slash and SEO, does it matter?
+summary: Does a trailing Slash matter for SEO?
+
+localeid: 'trailing-slash-seo'
+
+images: ['/static/images/twitter-card.png']
+
+date: '2024-02-26'
+lastmod: '2024-02-26'
+
+tags: ['code', 'vercel', 'seo']
+authors: ['default']
+
+language: en
+draft: false
+---
+
+# Trailing Slash and SEO, does it matter?
+
+updated on August 30, 2022, 5:49 PM ~ 77 weeks ago
+
+## What is a trailing slash in URL?
+
+The “/” at the end of an URL is called _trailing slash_.
+
+## Do trailing slashes matter for SEO?
+
+No, **having trailing slashes or not does not matter for SEO**, as long as is consistent across your website and one version redirects to the other (website.com/blog/ → website.com/blog)
+
+For a deeper explanation check this [article about trailing slashes by ahrefs](https://ahrefs.com/blog/trailing-slash/).
+
+---
+
+## How to remove trailing slash from URL in Vercel
+
+Add a `vercel.json` file at the root of your project and paste the following code:
+
+```
+{
+    "trailingSlash": false
+}
+```
+
+## How to add trailing slash to URL in Vercel
+
+Add a `vercel.json` file at the root of your project and paste the following code:
+
+```
+{
+    "trailingSlash": true
+}
+```
+
+## How to add or remove trailing slash in SvelteKit
+
+Inside `svelte.config.js` add the following option
+
+```
+const config = {
+    kit: {
+        trailingSlash: 'never', //removes trailing slash
+    }
+    //...
+}
+```
+
+- `'never'` — redirect `/x/` to `/x` (removes trailing slash)
+- `'always'` — redirect `/x` to `/x/` (adds trailing slash)
+- `'ignore'` — don't automatically add or remove trailing slashes. `/x` and `/x/` will be treated equivalently
+
+`ignore` is not recommended as it leads to duplicated content.
+
+For more information check [SvelteKit’s documentation on trailing slash](https://kit.svelte.dev/docs/configuration#trailingslash).
+
+## SvelteKit and Vercel trailing slash
+
+If you are using SvelteKit with Vercel, use `svelte.config.js` configuration and remove the `trailingSlash` entry from `vercel.json`. Failing to do so will cause a redirect loop and your pages will not show up.
