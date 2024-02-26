@@ -5,7 +5,7 @@ import { slug } from 'github-slugger'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer.js'
 import { allBlogs } from '../.contentlayer/generated/index.mjs'
 import siteMetadata from '../data/siteMetadata.js'
-import { fallbackLng, secondLng, thirdLng } from '../app/[locale]/i18n/locales.js'
+import { fallbackLng, secondLng /* , thirdLng */ } from '../app/[locale]/i18n/locales.js'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -15,7 +15,7 @@ export async function generateSlugMap() {
   // Process each blog post
   allBlogs.forEach((blog) => {
     const { localeid, language, slug } = blog
-    const formattedLng = language === fallbackLng ? fallbackLng : language == secondLng ? secondLng : thirdLng
+    const formattedLng = language === fallbackLng ? fallbackLng : language == secondLng ? secondLng : '' /* thirdLng */
 
     if (!slugMap[localeid]) {
       slugMap[localeid] = {}
@@ -35,7 +35,7 @@ export async function createTagCount() {
   const tagCount = {
     [fallbackLng]: {},
     [secondLng]: {},
-    [thirdLng]: {},
+    //[thirdLng]: {},
   }
 
   allBlogs.forEach((file) => {
@@ -46,9 +46,9 @@ export async function createTagCount() {
           tagCount[fallbackLng][formattedTag] = (tagCount[fallbackLng][formattedTag] || 0) + 1
         } else if (file.language === secondLng) {
           tagCount[secondLng][formattedTag] = (tagCount[secondLng][formattedTag] || 0) + 1
-        } else if (file.language === thirdLng) {
+        } /* else if (file.language === thirdLng) {
           tagCount[thirdLng][formattedTag] = (tagCount[thirdLng][formattedTag] || 0) + 1
-        }
+        } */
       })
     }
   })
