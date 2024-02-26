@@ -47,6 +47,8 @@ const projectsData: ProjectsData = {
     },
   ],
 
+  es: [],
+
   /*   fr: [
     {
       title: 'Un moteur de recherche',
