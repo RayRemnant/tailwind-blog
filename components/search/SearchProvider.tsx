@@ -7,7 +7,7 @@ import { CoreContent } from 'pliny/utils/contentlayer'
 import { Blog } from 'contentlayer/generated'
 import { LocaleTypes } from 'app/[locale]/i18n/settings'
 import { useTranslation } from 'app/[locale]/i18n/client'
-import { fallbackLng } from 'app/[locale]/i18n/locales'
+import { fallbackLng, secondLng } from 'app/[locale]/i18n/locales'
 
 interface SearchProviderProps {
   children: ReactNode
@@ -18,7 +18,7 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
   const { t } = useTranslation(locale, '')
   const router = useRouter()
   /* issue when using regular translations, this is a workaround to show how to implement section titles */
-  const navigationSection = locale === fallbackLng ? 'Navigate' : 'Naviguer'
+  const navigationSection = locale === fallbackLng ? 'Navigate' : 'Naviga'
   return (
     <KBarSearchProvider
       kbarConfig={{
@@ -27,7 +27,7 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
         defaultActions: [
           {
             id: 'home',
-            name: locale === fallbackLng ? 'Home' : 'Accueil',
+            name: locale === fallbackLng ? 'Home' : 'Home',
             keywords: '',
             shortcut: ['h'],
             section: navigationSection,
@@ -51,7 +51,7 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
           },
           {
             id: 'projects',
-            name: locale === fallbackLng ? 'Projects' : 'Projets',
+            name: locale === fallbackLng ? 'Projects' : 'Progetti',
             keywords: '',
             shortcut: ['p'],
             section: navigationSection,
@@ -59,7 +59,7 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
           },
           {
             id: 'about',
-            name: locale === fallbackLng ? 'About' : 'À propos',
+            name: locale === fallbackLng ? 'About' : 'Chi siamo',
             keywords: '',
             shortcut: ['a'],
             section: navigationSection,
