@@ -40,3 +40,18 @@ img {
   height: fit-content;
   border-radius: 3px;
 }
+
+@layer base {
+  /* This is how you apply the border-color for both light and dark mode */
+  .border-color {
+    @apply border-black dark:border-white;
+  }
+}
+
+tr {
+  border-bottom: 1px solid gray;
+}
+
+td {
+  text-align: center;
+}
