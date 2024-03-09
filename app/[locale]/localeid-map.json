@@ -1,22 +1,4 @@
 {
-  "google-play-book-notes-export": {
-    "en": "posts/google-play-book-notes-export"
-  },
-  "trailing-slash-seo": {
-    "en": "posts/trailing-slash-seo"
-  },
-  "best-ssd-ark": {
-    "it": "articoli/miglior-ssd-old"
-  },
-  "best-ssd": {
-    "it": "articoli/miglior-ssd"
-  },
-  "best-psu-pc": {
-    "it": "articoli/miglior-alimentatore-pc"
-  },
-  "best-case-pc": {
-    "it": "articoli/miglior-case-pc"
-  },
   "thingssss": {
     "en": "IDEAS"
   },
@@ -25,8 +7,29 @@
     "en": "posts/gpu-chart",
     "es": "articles/route-imbriquee/gpu-chart"
   },
+  "best-psu-pc": {
+    "it": "articoli/miglior-alimentatore-pc"
+  },
+  "best-case-pc": {
+    "it": "articoli/miglior-case-pc"
+  },
+  "best-ssd-ark": {
+    "it": "articoli/miglior-ssd-old"
+  },
+  "best-ssd": {
+    "it": "articoli/miglior-ssd"
+  },
   "nope": {
     "it": "articoli/prova"
+  },
+  "google-play-book-notes-export": {
+    "en": "posts/google-play-book-notes-export"
+  },
+  "spotify-premium-free": {
+    "en": "posts/spotify-free"
+  },
+  "trailing-slash-seo": {
+    "en": "posts/trailing-slash-seo"
   },
   "nestedroutes": {
     "en": "posts/nested-route/introducing-multi-part-posts-with-nested-routing"
