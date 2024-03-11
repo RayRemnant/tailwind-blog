@@ -1,9 +1,9 @@
 const headerNavLinks: { href: string; title: string }[] = [
-  { href: '/', title: 'Home' },
-  { href: '/blog', title: 'Blog' },
+  { href: '/', title: 'home' },
+  { href: '/blog', title: 'blog' },
   /*   { href: '/tags', title: 'Tags' },
   { href: '/projects', title: 'Projects' }, */
-  { href: '/about', title: 'About' },
+  { href: '/about', title: 'about' },
   { href: '/ssd-list', title: 'SSD List' },
 ]
 

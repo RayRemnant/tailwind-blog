@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { ArrowUpIcon, ArrowDownIcon, ShoppingCartIcon } from '@heroicons/react/20/solid'
 
+import { useParams, usePathname } from 'next/navigation'
+import { useTranslation } from 'app/[locale]/i18n/client'
+
 function getScoreColor(score, groups) {
   if (score <= groups[0]) {
     return 'red'
@@ -64,26 +67,45 @@ function Table({ data }) {
     scores[groupSize * 2 - 1], // Upper bound for the second group
   ]
 
+  const locale = useParams()?.locale
+  const { t } = useTranslation(locale, '')
+
   return (
-    <div>
-      <table className="w-full">
+    <div className="flex justify-center mt-6">
+      <table className="ssd-table shrink-0">
         <thead>
           <tr className="cursor-pointer">
-            <th onClick={() => handleSort('name')}>Name {getSortingIcon('name', sortBy, sortAsc)}</th>
-            <th onClick={() => handleSort('capacity')}>Capacity {getSortingIcon('capacity', sortBy, sortAsc)}</th>
-            <th onClick={() => handleSort('readSpeed')}>Read Speed {getSortingIcon('readSpeed', sortBy, sortAsc)}</th>
-            <th onClick={() => handleSort('writeSpeed')}>
-              Write Speed {getSortingIcon('writeSpeed', sortBy, sortAsc)}
+            <th onClick={() => handleSort('name')}>
+              {t('name').capitalize()} {getSortingIcon('name', sortBy, sortAsc)}
             </th>
-            <th onClick={() => handleSort('score')}>Score {getSortingIcon('score', sortBy, sortAsc)}</th>
-            <th onClick={() => handleSort('amazon.price')}>Price {getSortingIcon('amazon.price', sortBy, sortAsc)}</th>
+            <th onClick={() => handleSort('capacity')}>
+              {t('capacity').capitalize()} {getSortingIcon('capacity', sortBy, sortAsc)}
+            </th>
+            <th onClick={() => handleSort('readSpeed')}>
+              {t('read speed').capitalize()}
+              {getSortingIcon('readSpeed', sortBy, sortAsc)}
+            </th>
+            <th onClick={() => handleSort('writeSpeed')}>
+              {t('write speed').capitalize()}
+              {getSortingIcon('writeSpeed', sortBy, sortAsc)}
+            </th>
+            <th onClick={() => handleSort('score')}>
+              {t('score').capitalize()}
+              {getSortingIcon('score', sortBy, sortAsc)}
+            </th>
+            <th onClick={() => handleSort('amazon.price')}>
+              {t('price').capitalize()}
+              {getSortingIcon('amazon.price', sortBy, sortAsc)}
+            </th>
             <th onClick={() => handleSort('amazon.pricePerGb')}>
-              Price Per GB {getSortingIcon('amazon.pricePerGb', sortBy, sortAsc)}
+              {t('price per GB').capitalize()}
+              {getSortingIcon('amazon.pricePerGb', sortBy, sortAsc)}
             </th>
             <th onClick={() => handleSort('amazon.pricePerformance')}>
-              Price Performance {getSortingIcon('amazon.pricePerformance', sortBy, sortAsc)}
+              {t('price').capitalize()} / {t('performance').capitalize()}
+              {getSortingIcon('amazon.pricePerformance', sortBy, sortAsc)}
             </th>
-            <th>Shop</th>
+            <th> {t('shop').capitalize()}</th>
           </tr>
         </thead>
         <tbody>
@@ -122,10 +144,8 @@ function Table({ data }) {
                 </div>
               </td>
               <td>
-                <a href={`${item.amazon.link}?tag=omni-atlas-21`} target="_blank">
-                  <button className="flex items-center justify-center w-10 h-10 rounded-full bg-primary ">
-                    <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-                  </button>
+                <a href={`${item.amazon.link}?tag=omni-atlas-21`} target="_blank" className="flex justify-center">
+                  <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
                 </a>
               </td>
             </tr>

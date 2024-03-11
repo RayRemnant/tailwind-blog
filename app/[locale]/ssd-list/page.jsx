@@ -2,7 +2,10 @@
 import { useState } from 'react'
 import jsonData from './data.json'
 import Table from './components/Table.js'
-import SelectMenu from './components/SelectMenu'
+import SelectMenu from './components/SelectMenu.js'
+
+import { useParams, usePathname } from 'next/navigation'
+import { useTranslation } from 'app/[locale]/i18n/client'
 
 function normalizePricePerformance(data) {
   const pricePerformanceValues = data.map((item) => item.score / item.amazon.pricePerGb)
@@ -25,13 +28,16 @@ function Search({ searchTerm, setSearchTerm }) {
     setSearchTerm(event.target.value)
   }
 
+  const locale = useParams()?.locale
+  const { t } = useTranslation(locale, '')
+
   return (
     <div className="relative h-10">
       <input
         type="text"
         value={searchTerm}
         onChange={handleSearchChange}
-        placeholder="Search..."
+        placeholder={t('Search') + '...'}
         className="bg-white text-black antialiased dark:bg-gray-950 dark:text-white rounded-md"
       />
     </div>

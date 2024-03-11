@@ -22,5 +22,15 @@
   "linkedinshare": "tasto condivisione linkedin",
   "whatsappshare": "tasto condivisione whatsapp",
   "telegramshare": "tasto condivisione telegram",
-  "pinterestshare": "tasto condivisione pinterest"
+  "pinterestshare": "tasto condivisione pinterest",
+  "SSD List": "Lista SSD",
+  "Search": "Cerca",
+  "name": "nome",
+  "capacity": "capacità",
+  "write speed": "velocità scrittura",
+  "read speed": "velocità lettura",
+  "score": "punteggio",
+  "price": "prezzo",
+  "shop": "acquista",
+  "price per GB": "prezzo per GB"
 }

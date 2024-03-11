@@ -54,4 +54,10 @@ tr {
 
 td {
   text-align: center;
+  padding: 1rem 0.25rem;
+}
+
+.ssd-table {
+  width: 90vw;
+  table-layout: fixed;
 }

@@ -1,5 +1,16 @@
 'use client'
 
+declare global {
+  interface String {
+    capitalize(): string
+  }
+}
+
+String.prototype.capitalize = function () {
+  if (this.length === 0) return this
+  return this.charAt(0).toUpperCase() + this.slice(1)
+}
+
 import { useEffect, useState } from 'react'
 import i18next, { i18n } from 'i18next'
 import { initReactI18next, useTranslation as useTransAlias } from 'react-i18next'
