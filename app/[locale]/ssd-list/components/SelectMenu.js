@@ -43,12 +43,6 @@ export default function Example({ selectedCountries, setSelectedCountries, handl
                 e.preventDefault() // Prevent default behavior
                 handleCountryToggle(country)
               }}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault()
-                  handleCountryToggle(country)
-                }
-              }}
             >
               <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
                 <input
