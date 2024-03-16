@@ -7,15 +7,17 @@ function classNames(...classes) {
 export default function Example({ selectedCountries, setSelectedCountries, handleCountryToggle, countries }) {
   const [isOpen, setIsOpen] = useState(false)
 
+  const toggleDropdown = () => {
+    setIsOpen((prevIsOpen) => !prevIsOpen)
+  }
+
   return (
     <>
       <button
         id="dropdownBgHoverButton"
         className="w-48 text-white bg-primary-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
         type="button"
-        onClick={() => {
-          setIsOpen((isOpen) => !isOpen)
-        }}
+        onClick={toggleDropdown}
       >
         Filter countries
         <svg
@@ -39,9 +41,15 @@ export default function Example({ selectedCountries, setSelectedCountries, handl
               onClick={(e) => {
                 e.stopPropagation() // Stop event from bubbling up
                 e.preventDefault() // Prevent default behavior
-
                 handleCountryToggle(country)
               }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  handleCountryToggle(country)
+                }
+              }}
+              tabIndex={0} // Ensure the element can receive focus
             >
               <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
                 <input
@@ -49,8 +57,7 @@ export default function Example({ selectedCountries, setSelectedCountries, handl
                   id={`checkbox-${country}`}
                   type="checkbox"
                   value="nothing"
-                  /*                   defaultChecked={selectedCountries.includes(country)}
-                   */ className={`w-4 h-4 bg-gray-100 border-gray-300 rounded ${
+                  className={`w-4 h-4 bg-gray-100 border-gray-300 rounded ${
                     selectedCountries.includes(country) ? 'bg-primary-500' : 'bg-white-500'
                   }`}
                 />

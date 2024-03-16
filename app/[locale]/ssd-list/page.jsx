@@ -9,7 +9,8 @@ function getUniqueValues(arr, property) {
   console.log('ARR ', arr)
 
   arr.forEach((item) => {
-    if (item.hasOwnProperty(property)) {
+    // Check if the property exists in the object
+    if (property in item) {
       uniqueValues.add(item[property]) // Add the property value to the Set
     }
   })
