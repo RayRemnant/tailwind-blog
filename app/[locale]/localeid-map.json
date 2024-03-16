@@ -5,7 +5,7 @@
   "gpuchart": {
     "it": "articoli/gpu-chart",
     "en": "posts/gpu-chart",
-    "es": "articles/route-imbriquee/gpu-chart"
+    "": "articles/route-imbriquee/gpu-chart"
   },
   "best-psu-pc": {
     "it": "articoli/miglior-alimentatore-pc"
@@ -22,11 +22,17 @@
   "nope": {
     "it": "articoli/prova"
   },
+  "LOCALEID": {
+    "en": "posts/puppeteer-guide"
+  },
   "google-play-book-notes-export": {
     "en": "posts/google-play-book-notes-export"
   },
+  "npm-update-latest-version": {
+    "en": "posts/npm-update-latest-version"
+  },
   "spotify-premium-free": {
-    "en": "posts/spotify-free"
+    "en": "posts/vercel-dev-error-windows"
   },
   "trailing-slash-seo": {
     "en": "posts/trailing-slash-seo"
