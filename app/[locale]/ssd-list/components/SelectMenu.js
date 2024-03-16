@@ -49,7 +49,6 @@ export default function Example({ selectedCountries, setSelectedCountries, handl
                   handleCountryToggle(country)
                 }
               }}
-              tabIndex={0} // Ensure the element can receive focus
             >
               <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
                 <input
@@ -60,6 +59,7 @@ export default function Example({ selectedCountries, setSelectedCountries, handl
                   className={`w-4 h-4 bg-gray-100 border-gray-300 rounded ${
                     selectedCountries.includes(country) ? 'bg-primary-500' : 'bg-white-500'
                   }`}
+                  tabIndex={0}
                 />
 
                 <label
