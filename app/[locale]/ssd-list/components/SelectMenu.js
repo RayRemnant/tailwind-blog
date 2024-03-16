@@ -1,68 +1,76 @@
-import { Listbox, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { useState } from 'react'
 
-const flags = {
-  amazon_com: 'https://flagicons.lipis.dev/flags/4x3/us.svg',
-  amazon_it: 'https://flagicons.lipis.dev/flags/4x3/it.svg',
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
 }
 
-const shopOptions = [
-  { id: 'amazon_com', name: 'Amazon.com', flag: 'usa' },
-  { id: 'amazon_it', name: 'Amazon.it', flag: 'italy' },
-]
+export default function Example({ selectedCountries, setSelectedCountries, handleCountryToggle, countries }) {
+  const [isOpen, setIsOpen] = useState(false)
 
-export default function SelectShop({ selectedShop, setSelectedShop, onChange }) {
   return (
-    <Listbox value={selectedShop} onChange={setSelectedShop}>
-      {({ open }) => (
-        <>
-          {/*           <Listbox.Label className="block text-sm font-medium leading-6 text-gray-700">Select Shop:</Listbox.Label>
-           */}
-          <div className="relative">
-            <Listbox.Button className="border relative w-full py-2 pl-3 pr-10 text-left  rounded-md shadow-sm focus:outline-none focus:ring-2 sm:text-sm">
-              <span className="flex items-center">
-                <img src={flags[selectedShop]} alt={selectedShop} className="w-6 h-6 rounded-full" />
-                <span className="ml-3 block truncate">
-                  {shopOptions.find((option) => option.id === selectedShop)?.name}
-                </span>
-              </span>
-              <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                <ChevronDownIcon className="w-5 h-5 text-gray-400" aria-hidden="true" />
-              </span>
-            </Listbox.Button>
+    <>
+      <button
+        id="dropdownBgHoverButton"
+        className="w-48 text-white bg-primary-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+        type="button"
+        onClick={() => {
+          setIsOpen((isOpen) => !isOpen)
+        }}
+      >
+        Filter countries
+        <svg
+          className="w-2.5 h-2.5 ms-3"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 10 6"
+        >
+          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
+        </svg>
+      </button>
+      <div
+        id="dropdownBgHover"
+        className={`z-10 ${isOpen ? '' : 'hidden'} right-0 top-12 absolute w-48 bg-white rounded-lg shadow dark:bg-gray-700`}
+      >
+        <ul className="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownBgHoverButton">
+          {countries.map((country) => (
+            <li
+              key={country}
+              onClick={(e) => {
+                e.stopPropagation() // Stop event from bubbling up
+                e.preventDefault() // Prevent default behavior
 
-            <Transition
-              show={open}
-              enter="transition ease-out duration-100 transform"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
-              leave="transition ease-in duration-75 transform"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
+                handleCountryToggle(country)
+              }}
             >
-              <Listbox.Options
-                static
-                className="bg-white text-black antialiased dark:bg-gray-950 dark:text-white absolute z-10 mt-1 w-full shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm border "
-              >
-                {shopOptions.map((option, index) => (
-                  <Listbox.Option key={option.id} value={option.id}>
-                    {({ active }) => (
-                      <div
-                        className={`cursor-pointer select-none relative py-2 pl-10 pr-4 hover:bg-gray-800 transition-colors duration-300`}
-                      >
-                        <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                          <img src={flags[option.id]} alt={option.id} className="w-6 h-6 rounded-full" />
-                        </span>
-                        <span className="font-normal block truncate">{option.name}</span>
-                      </div>
-                    )}
-                  </Listbox.Option>
-                ))}
-              </Listbox.Options>
-            </Transition>
-          </div>
-        </>
-      )}
-    </Listbox>
+              <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                <input
+                  key={`check-${country}`}
+                  id={`checkbox-${country}`}
+                  type="checkbox"
+                  value="nothing"
+                  /*                   defaultChecked={selectedCountries.includes(country)}
+                   */ className={`w-4 h-4 bg-gray-100 border-gray-300 rounded ${
+                    selectedCountries.includes(country) ? 'bg-primary-500' : 'bg-white-500'
+                  }`}
+                />
+
+                <label
+                  htmlFor={`checkbox-${country}`}
+                  className="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300"
+                >
+                  <img
+                    src={`https://flagicons.lipis.dev/flags/4x3/${country == 'en' ? 'gb' : country}.svg`}
+                    alt={country}
+                    className="inline w-6 h-6 "
+                  />{' '}
+                  amazon.{country == 'en' ? 'co.uk' : country}
+                </label>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   )
 }

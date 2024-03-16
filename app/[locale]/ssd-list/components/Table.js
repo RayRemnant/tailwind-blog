@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { ArrowUpIcon, ArrowDownIcon, ShoppingCartIcon } from '@heroicons/react/20/solid'
-
-import { useParams, usePathname } from 'next/navigation'
+import { useParams } from 'next/navigation'
 import { useTranslation } from 'app/[locale]/i18n/client'
 
 function getScoreColor(score, groups) {
@@ -14,11 +13,9 @@ function getScoreColor(score, groups) {
   }
 }
 
-function getSortingIcon(column, sortBy, sortDesc) {
-  //console.log(sortBy, ' ', column)
+function getSortingIcon(column, sortBy, sortAsc) {
   if (sortBy === column) {
-    //console.log(sortDesc)
-    return sortDesc ? (
+    return sortAsc ? (
       <ArrowUpIcon className="h-4 w-4 inline-block" />
     ) : (
       <ArrowDownIcon className="h-4 w-4 inline-block" />
@@ -31,7 +28,8 @@ function getSortingIcon(column, sortBy, sortDesc) {
 function Table({ data }) {
   const [sortBy, setSortBy] = useState('')
   const [sortAsc, setSortAsc] = useState(false)
-  const [nestedSortBy, setNestedSortBy] = useState(null)
+  const locale = useParams()?.locale
+  const { t } = useTranslation(locale, '')
 
   const handleSort = (column) => {
     if (sortBy === column && !sortAsc) {
@@ -44,31 +42,17 @@ function Table({ data }) {
 
   const sortedData = sortBy
     ? data.sort((a, b) => {
-        const aSort = sortBy.split('.').reduce((obj, key) => obj[key], a)
-        //console.log('aSort ', aSort)
-        const bSort = sortBy.split('.').reduce((obj, key) => obj[key], b)
-        //console.log('bSort ', bSort)
-
-        // Sorting by top-level property
-        if (sortAsc) {
-          return aSort - bSort
-        } else {
-          return bSort - aSort
-        }
+        const aValue = a['ssdInfo'][sortBy] !== undefined ? a['ssdInfo'][sortBy] : a[sortBy]
+        const bValue = b['ssdInfo'][sortBy] !== undefined ? b['ssdInfo'][sortBy] : b[sortBy]
+        return sortAsc ? aValue - bValue : bValue - aValue
       })
     : data
 
-  const scores = sortedData.map((item) => item.score)
-  scores.sort((a, b) => a - b) // Sort scores in ascending order
+  const scores = sortedData.map((item) => item['ssdInfo']['score'])
+  scores.sort((a, b) => a - b)
 
   const groupSize = Math.ceil(scores.length / 3)
-  const groups = [
-    scores[groupSize - 1], // Upper bound for the first group
-    scores[groupSize * 2 - 1], // Upper bound for the second group
-  ]
-
-  const locale = useParams()?.locale
-  const { t } = useTranslation(locale, '')
+  const groups = [scores[groupSize - 1], scores[groupSize * 2 - 1]]
 
   return (
     <div className="flex justify-center mt-6">
@@ -81,29 +65,29 @@ function Table({ data }) {
             <th onClick={() => handleSort('capacity')}>
               {t('capacity').capitalize()} {getSortingIcon('capacity', sortBy, sortAsc)}
             </th>
-            <th onClick={() => handleSort('readSpeed')}>
+            {/* <th onClick={() => handleSort('readSpeed')}>
               {t('read speed').capitalize()}
               {getSortingIcon('readSpeed', sortBy, sortAsc)}
             </th>
             <th onClick={() => handleSort('writeSpeed')}>
               {t('write speed').capitalize()}
               {getSortingIcon('writeSpeed', sortBy, sortAsc)}
-            </th>
+            </th> */}
             <th onClick={() => handleSort('score')}>
               {t('score').capitalize()}
               {getSortingIcon('score', sortBy, sortAsc)}
             </th>
-            <th onClick={() => handleSort('amazon.price')}>
+            <th onClick={() => handleSort('price')}>
               {t('price').capitalize()}
-              {getSortingIcon('amazon.price', sortBy, sortAsc)}
+              {getSortingIcon('price', sortBy, sortAsc)}
             </th>
-            <th onClick={() => handleSort('amazon.pricePerGb')}>
+            <th onClick={() => handleSort('pricePerGb')}>
               {t('price per GB').capitalize()}
-              {getSortingIcon('amazon.pricePerGb', sortBy, sortAsc)}
+              {getSortingIcon('pricePerGb', sortBy, sortAsc)}
             </th>
-            <th onClick={() => handleSort('amazon.pricePerformance')}>
+            <th onClick={() => handleSort('pricePerformance')}>
               {t('price').capitalize()} / {t('performance').capitalize()}
-              {getSortingIcon('amazon.pricePerformance', sortBy, sortAsc)}
+              {getSortingIcon('pricePerformance', sortBy, sortAsc)}
             </th>
             <th> {t('shop').capitalize()}</th>
           </tr>
@@ -111,18 +95,16 @@ function Table({ data }) {
         <tbody>
           {sortedData.map((item, index) => (
             <tr key={index}>
-              <td>{item.name}</td>
-              <td>{item.capacity} GB</td>
-              <td>{item.readSpeed} MB/s</td>
-              <td>{item.writeSpeed} MB/s</td>
-              <td style={{ color: getScoreColor(item.score, groups) }}>{item.score}</td>
+              <td>{item['ssdInfo']['name']}</td>
+              <td>{item['ssdInfo']['capacity']} GB</td>
+              {/* <td>{item['ssdInfo']['readSpeed']} MB/s</td>
+              <td>{item['ssdInfo']['writeSpeed']} MB/s</td> */}
+              <td style={{ color: getScoreColor(item['ssdInfo']['score'], groups) }}>{item['ssdInfo']['score']}</td>
               <td>
-                {item.amazon.currency}
-                {item.amazon.price}
+                {item['price']} {item['currency']}
               </td>
               <td>
-                {item.amazon.currency}
-                {item.amazon.pricePerGb}
+                {item['pricePerGb']} {item['currency']}
               </td>
               <td>
                 <div
@@ -136,7 +118,7 @@ function Table({ data }) {
                 >
                   <div
                     style={{
-                      width: `${item.amazon.pricePerformance}%`,
+                      width: `${item['pricePerformance']}%`,
                       backgroundColor: 'green',
                       height: '100%',
                     }}
@@ -144,8 +126,16 @@ function Table({ data }) {
                 </div>
               </td>
               <td>
-                <a href={`${item.amazon.link}?tag=omni-atlas-21`} target="_blank" className="flex justify-center">
-                  <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
+                <a href={item.url} target="_blank" rel="noreferrer" className="relative block w-full h-8">
+                  <img
+                    className="absolute inset-0 w-full h-full object-contain opacity-50"
+                    width="36px"
+                    src={`https://flagicons.lipis.dev/flags/4x3/${item.country === 'en' ? 'gb' : item.country}.svg`}
+                  />
+                  <ShoppingCartIcon
+                    className="h-6 w-6 absolute inset-0 w-full h-full object-cover opacity-75"
+                    aria-hidden="true"
+                  />
                 </a>
               </td>
             </tr>
