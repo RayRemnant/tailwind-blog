@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "next dev",
-    "dev": "cross-env INIT_CWD=$PWD next dev",
+    "dev": "node -e \"console.log('PWD=' + process.cwd())\" && cross-env INIT_CWD=%CD% next dev",
+    "dev win": "cross-env INIT_CWD='C:\\Users\\pc\\Documents\\GitHub\\tailwind-blog' next dev",
     "build": " next build && cross-env NODE_OPTIONS='--experimental-json-modules' node ./scripts/postbuild.mjs",
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
