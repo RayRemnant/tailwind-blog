@@ -1,0 +1,529 @@
+[
+  {
+    "country": "fr",
+    "price": 44.88,
+    "currency": "EUR",
+    "pricePerformance": 34.55849278254363,
+    "pricePerGb": "0.09",
+    "ssdInfo": {
+      "score": 2188,
+      "writeSpeed": 1405,
+      "readSpeed": 2889,
+      "name": "ADATA Falcon 512GB",
+      "asin": ["B0897D72B5"],
+      "id": "ADATA Falcon 512GB",
+      "capacity": 512,
+      "updated": { "seconds": 1710268160, "nanoseconds": 515000000 }
+    }
+  },
+  {
+    "country": "be",
+    "price": 51.77,
+    "currency": "EUR",
+    "pricePerformance": 28.54806804227396,
+    "pricePerGb": "0.10",
+    "ssdInfo": {
+      "score": 2188,
+      "writeSpeed": 1405,
+      "readSpeed": 2889,
+      "name": "ADATA Falcon 512GB",
+      "asin": ["B0897D72B5"],
+      "id": "ADATA Falcon 512GB",
+      "capacity": 512,
+      "updated": { "seconds": 1710268160, "nanoseconds": 515000000 }
+    }
+  },
+  {
+    "country": "it",
+    "price": 70.19,
+    "currency": "EUR",
+    "pricePerformance": 18.273746024008307,
+    "pricePerGb": "0.14",
+    "ssdInfo": {
+      "score": 2188,
+      "writeSpeed": 1405,
+      "readSpeed": 2889,
+      "name": "ADATA Falcon 512GB",
+      "asin": ["B0897D72B5"],
+      "id": "ADATA Falcon 512GB",
+      "capacity": 512,
+      "updated": { "seconds": 1710268160, "nanoseconds": 515000000 }
+    }
+  },
+  {
+    "country": "es",
+    "price": 79.9,
+    "currency": "EUR",
+    "pricePerformance": 14.764497200425012,
+    "pricePerGb": "0.16",
+    "ssdInfo": {
+      "score": 2188,
+      "writeSpeed": 1405,
+      "readSpeed": 2889,
+      "name": "ADATA Falcon 512GB",
+      "asin": ["B0897D72B5"],
+      "id": "ADATA Falcon 512GB",
+      "capacity": 512,
+      "updated": { "seconds": 1710268160, "nanoseconds": 515000000 }
+    }
+  },
+  {
+    "country": "de",
+    "price": 86.95,
+    "currency": "EUR",
+    "pricePerformance": 12.70770836533738,
+    "pricePerGb": "0.17",
+    "ssdInfo": {
+      "score": 2188,
+      "writeSpeed": 1405,
+      "readSpeed": 2889,
+      "name": "ADATA Falcon 512GB",
+      "asin": ["B0897D72B5"],
+      "id": "ADATA Falcon 512GB",
+      "capacity": 512,
+      "updated": { "seconds": 1710268160, "nanoseconds": 515000000 }
+    }
+  },
+  {
+    "country": "pl",
+    "price": 87.27,
+    "currency": "EUR",
+    "pricePerformance": 12.622234691582545,
+    "pricePerGb": "0.17",
+    "ssdInfo": {
+      "score": 2188,
+      "writeSpeed": 1405,
+      "readSpeed": 2889,
+      "name": "ADATA Falcon 512GB",
+      "asin": ["B0897D72B5"],
+      "id": "ADATA Falcon 512GB",
+      "capacity": 512,
+      "updated": { "seconds": 1710268160, "nanoseconds": 515000000 }
+    }
+  },
+  {
+    "country": "en",
+    "price": 92.91,
+    "currency": "EUR",
+    "pricePerformance": 11.212398604844582,
+    "pricePerGb": "0.18",
+    "ssdInfo": {
+      "score": 2188,
+      "writeSpeed": 1405,
+      "readSpeed": 2889,
+      "name": "ADATA Falcon 512GB",
+      "asin": ["B0897D72B5"],
+      "id": "ADATA Falcon 512GB",
+      "capacity": 512,
+      "updated": { "seconds": 1710268160, "nanoseconds": 515000000 }
+    }
+  },
+  {
+    "country": "nl",
+    "price": 97.61,
+    "currency": "EUR",
+    "pricePerformance": 10.1619905584557,
+    "pricePerGb": "0.19",
+    "ssdInfo": {
+      "score": 2188,
+      "writeSpeed": 1405,
+      "readSpeed": 2889,
+      "name": "ADATA Falcon 512GB",
+      "asin": ["B0897D72B5"],
+      "id": "ADATA Falcon 512GB",
+      "capacity": 512,
+      "updated": { "seconds": 1710268160, "nanoseconds": 515000000 }
+    }
+  },
+  {
+    "country": "se",
+    "price": 98.12,
+    "currency": "EUR",
+    "pricePerformance": 10.054062272833026,
+    "pricePerGb": "0.19",
+    "ssdInfo": {
+      "score": 2188,
+      "writeSpeed": 1405,
+      "readSpeed": 2889,
+      "name": "ADATA Falcon 512GB",
+      "asin": ["B0897D72B5"],
+      "id": "ADATA Falcon 512GB",
+      "capacity": 512,
+      "updated": { "seconds": 1710268160, "nanoseconds": 515000000 }
+    }
+  },
+  {
+    "country": "pl",
+    "price": 58.14,
+    "currency": "EUR",
+    "pricePerformance": 36.33573445227777,
+    "pricePerGb": "0.06",
+    "ssdInfo": {
+      "score": 2946,
+      "writeSpeed": 2055,
+      "readSpeed": 2702,
+      "name": "ADATA LEGEND 710 1TB",
+      "asin": ["B09YRY5MDC"],
+      "id": "ADATA LEGEND 710 1TB",
+      "capacity": 1024,
+      "updated": { "seconds": 1710268160, "nanoseconds": 959000000 }
+    }
+  },
+  {
+    "country": "se",
+    "price": 60.07,
+    "currency": "EUR",
+    "pricePerformance": 34.82764525410988,
+    "pricePerGb": "0.06",
+    "ssdInfo": {
+      "score": 2946,
+      "writeSpeed": 2055,
+      "readSpeed": 2702,
+      "name": "ADATA LEGEND 710 1TB",
+      "asin": ["B09YRY5MDC"],
+      "id": "ADATA LEGEND 710 1TB",
+      "capacity": 1024,
+      "updated": { "seconds": 1710268160, "nanoseconds": 959000000 }
+    }
+  },
+  {
+    "country": "fr",
+    "price": 80.52,
+    "currency": "EUR",
+    "pricePerformance": 23.289545381769162,
+    "pricePerGb": "0.08",
+    "ssdInfo": {
+      "score": 2946,
+      "writeSpeed": 2055,
+      "readSpeed": 2702,
+      "name": "ADATA LEGEND 710 1TB",
+      "asin": ["B09YRY5MDC"],
+      "id": "ADATA LEGEND 710 1TB",
+      "capacity": 1024,
+      "updated": { "seconds": 1710268160, "nanoseconds": 959000000 }
+    }
+  },
+  {
+    "country": "es",
+    "price": 80.72,
+    "currency": "EUR",
+    "pricePerformance": 23.205570876118124,
+    "pricePerGb": "0.08",
+    "ssdInfo": {
+      "score": 2946,
+      "writeSpeed": 2055,
+      "readSpeed": 2702,
+      "name": "ADATA LEGEND 710 1TB",
+      "asin": ["B09YRY5MDC"],
+      "id": "ADATA LEGEND 710 1TB",
+      "capacity": 1024,
+      "updated": { "seconds": 1710268160, "nanoseconds": 959000000 }
+    }
+  },
+  {
+    "country": "de",
+    "price": 81.89,
+    "currency": "EUR",
+    "pricePerformance": 22.722538526736326,
+    "pricePerGb": "0.08",
+    "ssdInfo": {
+      "score": 2946,
+      "writeSpeed": 2055,
+      "readSpeed": 2702,
+      "name": "ADATA LEGEND 710 1TB",
+      "asin": ["B09YRY5MDC"],
+      "id": "ADATA LEGEND 710 1TB",
+      "capacity": 1024,
+      "updated": { "seconds": 1710268160, "nanoseconds": 959000000 }
+    }
+  },
+  {
+    "country": "be",
+    "price": 82.82,
+    "currency": "EUR",
+    "pricePerformance": 22.348325216280823,
+    "pricePerGb": "0.08",
+    "ssdInfo": {
+      "score": 2946,
+      "writeSpeed": 2055,
+      "readSpeed": 2702,
+      "name": "ADATA LEGEND 710 1TB",
+      "asin": ["B09YRY5MDC"],
+      "id": "ADATA LEGEND 710 1TB",
+      "capacity": 1024,
+      "updated": { "seconds": 1710268160, "nanoseconds": 959000000 }
+    }
+  },
+  {
+    "country": "nl",
+    "price": 83.61,
+    "currency": "EUR",
+    "pricePerformance": 22.036984427510777,
+    "pricePerGb": "0.08",
+    "ssdInfo": {
+      "score": 2946,
+      "writeSpeed": 2055,
+      "readSpeed": 2702,
+      "name": "ADATA LEGEND 710 1TB",
+      "asin": ["B09YRY5MDC"],
+      "id": "ADATA LEGEND 710 1TB",
+      "capacity": 1024,
+      "updated": { "seconds": 1710268160, "nanoseconds": 959000000 }
+    }
+  },
+  {
+    "country": "it",
+    "price": 90.58,
+    "currency": "EUR",
+    "pricePerformance": 19.525418295917664,
+    "pricePerGb": "0.09",
+    "ssdInfo": {
+      "score": 2946,
+      "writeSpeed": 2055,
+      "readSpeed": 2702,
+      "name": "ADATA LEGEND 710 1TB",
+      "asin": ["B09YRY5MDC"],
+      "id": "ADATA LEGEND 710 1TB",
+      "capacity": 1024,
+      "updated": { "seconds": 1710268160, "nanoseconds": 959000000 }
+    }
+  },
+  {
+    "country": "en",
+    "price": 90.61,
+    "currency": "EUR",
+    "pricePerformance": 19.51544324347481,
+    "pricePerGb": "0.09",
+    "ssdInfo": {
+      "score": 2946,
+      "writeSpeed": 2055,
+      "readSpeed": 2702,
+      "name": "ADATA LEGEND 710 1TB",
+      "asin": ["B09YRY5MDC"],
+      "id": "ADATA LEGEND 710 1TB",
+      "capacity": 1024,
+      "updated": { "seconds": 1710268160, "nanoseconds": 959000000 }
+    }
+  },
+  {
+    "country": "se",
+    "price": 39.63,
+    "currency": "EUR",
+    "pricePerformance": 33.505444963739876,
+    "pricePerGb": "0.15",
+    "ssdInfo": {
+      "score": 1887,
+      "writeSpeed": 1266,
+      "readSpeed": 2401,
+      "name": "ADATA LEGEND 710 256GB",
+      "asin": ["B09YRZHRGM"],
+      "id": "ADATA LEGEND 710 256GB",
+      "capacity": 256,
+      "updated": { "seconds": 1710268161, "nanoseconds": 761000000 }
+    }
+  },
+  {
+    "country": "en",
+    "price": 46.74,
+    "currency": "EUR",
+    "pricePerformance": 26.795818272554534,
+    "pricePerGb": "0.18",
+    "ssdInfo": {
+      "score": 1887,
+      "writeSpeed": 1266,
+      "readSpeed": 2401,
+      "name": "ADATA LEGEND 710 256GB",
+      "asin": ["B09YRZHRGM"],
+      "id": "ADATA LEGEND 710 256GB",
+      "capacity": 256,
+      "updated": { "seconds": 1710268161, "nanoseconds": 761000000 }
+    }
+  },
+  {
+    "country": "de",
+    "price": 47.2,
+    "currency": "EUR",
+    "pricePerformance": 26.431342502408135,
+    "pricePerGb": "0.18",
+    "ssdInfo": {
+      "score": 1887,
+      "writeSpeed": 1266,
+      "readSpeed": 2401,
+      "name": "ADATA LEGEND 710 256GB",
+      "asin": ["B09YRZHRGM"],
+      "id": "ADATA LEGEND 710 256GB",
+      "capacity": 256,
+      "updated": { "seconds": 1710268161, "nanoseconds": 761000000 }
+    }
+  },
+  {
+    "country": "pl",
+    "price": 47.95,
+    "currency": "EUR",
+    "pricePerformance": 25.852084302177726,
+    "pricePerGb": "0.19",
+    "ssdInfo": {
+      "score": 1887,
+      "writeSpeed": 1266,
+      "readSpeed": 2401,
+      "name": "ADATA LEGEND 710 256GB",
+      "asin": ["B09YRZHRGM"],
+      "id": "ADATA LEGEND 710 256GB",
+      "capacity": 256,
+      "updated": { "seconds": 1710268161, "nanoseconds": 761000000 }
+    }
+  },
+  {
+    "country": "be",
+    "price": 48.68,
+    "currency": "EUR",
+    "pricePerformance": 25.30541433375431,
+    "pricePerGb": "0.19",
+    "ssdInfo": {
+      "score": 1887,
+      "writeSpeed": 1266,
+      "readSpeed": 2401,
+      "name": "ADATA LEGEND 710 256GB",
+      "asin": ["B09YRZHRGM"],
+      "id": "ADATA LEGEND 710 256GB",
+      "capacity": 256,
+      "updated": { "seconds": 1710268161, "nanoseconds": 761000000 }
+    }
+  },
+  {
+    "country": "fr",
+    "price": 48.72,
+    "currency": "EUR",
+    "pricePerformance": 25.27593323405583,
+    "pricePerGb": "0.19",
+    "ssdInfo": {
+      "score": 1887,
+      "writeSpeed": 1266,
+      "readSpeed": 2401,
+      "name": "ADATA LEGEND 710 256GB",
+      "asin": ["B09YRZHRGM"],
+      "id": "ADATA LEGEND 710 256GB",
+      "capacity": 256,
+      "updated": { "seconds": 1710268161, "nanoseconds": 761000000 }
+    }
+  },
+  {
+    "country": "nl",
+    "price": 49,
+    "currency": "EUR",
+    "pricePerformance": 25.070913243581288,
+    "pricePerGb": "0.19",
+    "ssdInfo": {
+      "score": 1887,
+      "writeSpeed": 1266,
+      "readSpeed": 2401,
+      "name": "ADATA LEGEND 710 256GB",
+      "asin": ["B09YRZHRGM"],
+      "id": "ADATA LEGEND 710 256GB",
+      "capacity": 256,
+      "updated": { "seconds": 1710268161, "nanoseconds": 761000000 }
+    }
+  },
+  {
+    "country": "es",
+    "price": 49.29,
+    "currency": "EUR",
+    "pricePerformance": 24.86102667999141,
+    "pricePerGb": "0.19",
+    "ssdInfo": {
+      "score": 1887,
+      "writeSpeed": 1266,
+      "readSpeed": 2401,
+      "name": "ADATA LEGEND 710 256GB",
+      "asin": ["B09YRZHRGM"],
+      "id": "ADATA LEGEND 710 256GB",
+      "capacity": 256,
+      "updated": { "seconds": 1710268161, "nanoseconds": 761000000 }
+    }
+  },
+  {
+    "country": "it",
+    "price": 52.57,
+    "currency": "EUR",
+    "pricePerformance": 22.64834680487145,
+    "pricePerGb": "0.21",
+    "ssdInfo": {
+      "score": 1887,
+      "writeSpeed": 1266,
+      "readSpeed": 2401,
+      "name": "ADATA LEGEND 710 256GB",
+      "asin": ["B09YRZHRGM"],
+      "id": "ADATA LEGEND 710 256GB",
+      "capacity": 256,
+      "updated": { "seconds": 1710268161, "nanoseconds": 761000000 }
+    }
+  },
+  {
+    "country": "fr",
+    "price": 88,
+    "currency": "EUR",
+    "pricePerformance": 18.661305040150335,
+    "pricePerGb": "0.04",
+    "ssdInfo": {
+      "score": 2780,
+      "writeSpeed": 1942,
+      "readSpeed": 2705,
+      "name": "ADATA LEGEND 710 2TB",
+      "asin": ["B09LV5Z4PJ"],
+      "id": "ADATA LEGEND 710 2TB",
+      "capacity": 2048,
+      "updated": { "seconds": 1710268161, "nanoseconds": 749000000 }
+    }
+  },
+  {
+    "country": "pl",
+    "price": 108.15,
+    "currency": "EUR",
+    "pricePerformance": 13.208998213486806,
+    "pricePerGb": "0.05",
+    "ssdInfo": {
+      "score": 2780,
+      "writeSpeed": 1942,
+      "readSpeed": 2705,
+      "name": "ADATA LEGEND 710 2TB",
+      "asin": ["B09LV5Z4PJ"],
+      "id": "ADATA LEGEND 710 2TB",
+      "capacity": 2048,
+      "updated": { "seconds": 1710268161, "nanoseconds": 749000000 }
+    }
+  },
+  {
+    "country": "be",
+    "price": 113.8,
+    "currency": "EUR",
+    "pricePerformance": 12.02678966589903,
+    "pricePerGb": "0.06",
+    "ssdInfo": {
+      "score": 2780,
+      "writeSpeed": 1942,
+      "readSpeed": 2705,
+      "name": "ADATA LEGEND 710 2TB",
+      "asin": ["B09LV5Z4PJ"],
+      "id": "ADATA LEGEND 710 2TB",
+      "capacity": 2048,
+      "updated": { "seconds": 1710268161, "nanoseconds": 749000000 }
+    }
+  },
+  {
+    "country": "en",
+    "price": 137.65,
+    "currency": "EUR",
+    "pricePerformance": 8.105902552622004,
+    "pricePerGb": "0.07",
+    "ssdInfo": {
+      "score": 2780,
+      "writeSpeed": 1942,
+      "readSpeed": 2705,
+      "name": "ADATA LEGEND 710 2TB",
+      "asin": ["B09LV5Z4PJ"],
+      "id": "ADATA LEGEND 710 2TB",
+      "capacity": 2048,
+      "updated": { "seconds": 1710268161, "nanoseconds": 749000000 }
+    }
+  }
+]
