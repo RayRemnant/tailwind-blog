@@ -1,0 +1,33 @@
+---
+title: How to delete git history
+summary: hide your hosting secrets and stuff
+
+localeid: 'spotify-premium-free'
+
+images: ['/static/images/twitter-card.png']
+
+date: '2024-03-01'
+lastmod: '2024-03-01'
+
+tags: ['spotify', 'music']
+authors: ['default']
+
+language: en
+draft: true
+---
+
+`git filter-branch --tree-filter 'rm -f <yourfile>' HEAD`
+
+`git push origin --force --all`
+
+For Linux:
+
+`rm -rf .git/refs/original/`
+
+For Windows:
+`Remove-Item -Path .git\refs\original -Recurse -Force`
+
+finally..
+
+`git reflog expire --expire=now --all`
+`git gc --prune=now --aggressive`
