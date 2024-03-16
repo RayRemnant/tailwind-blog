@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { useState } from 'react'
 
 function classNames(...classes) {
@@ -36,6 +37,7 @@ export default function Example({ selectedCountries, setSelectedCountries, handl
       >
         <ul className="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownBgHoverButton">
           {countries.map((country) => (
+            // eslint-disable-next-line jsx-a11y/click-events-have-key-events
             <li
               key={country}
               onClick={(e) => {
