@@ -1,8 +1,8 @@
 import Main from './components/Main'
 import getData from './getData'
 
-import jsonData from './data.json'
-
+/* import jsonData from './sampleData.json'
+ */
 function getUniqueValues(arr, property) {
   const uniqueValues = new Set() // Using a Set to ensure uniqueness
 
