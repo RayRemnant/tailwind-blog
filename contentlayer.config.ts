@@ -21,7 +21,7 @@ import rehypePrismPlus from 'rehype-prism-plus'
 import rehypePresetMinify from 'rehype-preset-minify'
 import siteMetadata from './data/siteMetadata'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer.js'
-import { fallbackLng, secondLng, thirdLng } from './app/[locale]/i18n/locales'
+import { fallbackLng, secondLng /* , thirdLng */ } from './app/[locale]/i18n/locales'
 import { allBlogs } from 'contentlayer/generated'
 import { defineNestedType } from 'contentlayer/source-files'
 
@@ -51,7 +51,7 @@ async function generateSlugMap(allBlogs) {
   // Process each blog post
   allBlogs.forEach((blog) => {
     const { localeid, language, slug } = blog
-    const formattedLng = language === fallbackLng ? fallbackLng : language === secondLng ? secondLng : thirdLng
+    const formattedLng = language === fallbackLng ? fallbackLng : language === secondLng ? secondLng : '' /* thirdLng */
 
     if (!slugMap[localeid]) {
       slugMap[localeid] = {}
@@ -73,7 +73,7 @@ function createTagCount(allBlogs) {
   const tagCount = {
     [fallbackLng]: {},
     [secondLng]: {},
-    [thirdLng]: {},
+    /* [thirdLng]: {}, */
   }
 
   allBlogs.forEach((file) => {
@@ -84,9 +84,9 @@ function createTagCount(allBlogs) {
           tagCount[fallbackLng][formattedTag] = (tagCount[fallbackLng][formattedTag] || 0) + 1
         } else if (file.language === secondLng) {
           tagCount[secondLng][formattedTag] = (tagCount[secondLng][formattedTag] || 0) + 1
-        } else if (file.language === thirdLng) {
+        } /* else if (file.language === thirdLng) {
           tagCount[thirdLng][formattedTag] = (tagCount[thirdLng][formattedTag] || 0) + 1
-        }
+        } */
       })
     }
   })
