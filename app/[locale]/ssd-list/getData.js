@@ -43,7 +43,7 @@ const main = async () => {
   const ssdList = await aFetch('getDocs', { collectionName: 'ssd-tester' })
   //console.log(ssdList)
 
-  const final = []
+  let final = []
 
   await Promise.all(
     ssdList.map(async (ssdData) => {
@@ -87,6 +87,8 @@ const main = async () => {
   for (let item of final) {
     item.pricePerformance = normalizePricePerformance(item.pricePerformance, minPricePerformance, maxPricePerformance)
   }
+
+  final = final.sort((a, b) => b.pricePerformance - a.pricePerformance)
 
   return final
 }
