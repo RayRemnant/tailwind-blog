@@ -60,6 +60,7 @@ td {
 .ssd-table {
   width: 90vw;
   table-layout: fixed;
+  min-width: 40rem;
 }
 
 [type='checkbox']:focus {

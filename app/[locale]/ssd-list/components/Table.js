@@ -55,7 +55,7 @@ function Table({ data }) {
   const groups = [scores[groupSize - 1], scores[groupSize * 2 - 1]]
 
   return (
-    <div className="flex justify-center mt-6">
+    <div className="md:flex md:justify-center md:mt-6">
       <table className="ssd-table shrink-0">
         <thead>
           <tr className="cursor-pointer">
@@ -101,10 +101,10 @@ function Table({ data }) {
               <td>{item['ssdInfo']['writeSpeed']} MB/s</td> */}
               <td style={{ color: getScoreColor(item['ssdInfo']['score'], groups) }}>{item['ssdInfo']['score']}</td>
               <td>
-                {item['price']} {item['currency']}
+              {item['currency'] == "EUR" ? "€" : item["currency"]}{item['price']} 
               </td>
               <td>
-                {item['pricePerGb']} {item['currency']}
+              {item['currency'] == "EUR" ? "€" : item["currency"]}{item['pricePerGb']} 
               </td>
               <td>
                 <div
