@@ -34,7 +34,7 @@ function App({ data, countries }) {
 
   return (
     <>
-      <div className="flex justify-between relative">
+      <div className="flex justify-between relative mb-4">
         <input
           type="text"
           value={searchTerm}
