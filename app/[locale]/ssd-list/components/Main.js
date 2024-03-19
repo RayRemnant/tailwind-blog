@@ -21,8 +21,8 @@ function App({ data, countries }) {
   const { t } = useTranslation(locale, '')
 
   const handleCountryToggle = (country) => {
-    console.log('COUNTRY: ', country)
-    console.log(selectedCountries)
+    //console.log('COUNTRY: ', country)
+    //console.log(selectedCountries)
     setSelectedCountries((prevSelectedCountries) => {
       if (prevSelectedCountries.includes(country)) {
         return prevSelectedCountries.filter((c) => c !== country)
