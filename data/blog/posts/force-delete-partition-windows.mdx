@@ -1,0 +1,55 @@
+---
+title: How to force delete a partition (Windows)
+summary: Delete partitions using cmd 
+
+localeid: 'delete-partition-force'
+
+images: ['/static/images/twitter-card.png']
+
+date: '2024-03-19'
+lastmod: '2024-03-19'
+
+tags: ['Windows', 'Partition']
+authors: ['default']
+
+language: en
+draft: true
+---
+
+## Why can't I delete a partition?
+
+`Delete partitions that cannot be deleted using the Disk Management on Windows`
+
+If you are getting this error, the following will solve the issue.
+
+## Force delete partitions using cmd
+
+To begin, open Windows search and type **cmd**, click on **Command Prompt**.
+
+A black window with some text should open, follow the instructions below.
+
+**Press enter after typing each of the following commands**:
+
+`diskpart`
+
+A Windows popup should appear, click "Yes".
+
+`list disk`
+
+You will see the list of disks connected to your device. On the left you can see `Disk 0`, `Disk 1` etc. Find your desired disk and use the number in the following command:
+
+`select disk 0`
+
+The disk is now selected.
+
+`list partition`
+
+You will see a list of partitions, take note of which one you want to delete and use the number in the following command:
+
+`select partition 0`
+
+The partition is now selected. And lastly:
+
+`delete partition override`
+
+This will delete the partition.
