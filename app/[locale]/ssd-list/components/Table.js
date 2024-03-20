@@ -101,10 +101,12 @@ function Table({ data }) {
               <td>{item['ssdInfo']['writeSpeed']} MB/s</td> */}
               <td style={{ color: getScoreColor(item['ssdInfo']['score'], groups) }}>{item['ssdInfo']['score']}</td>
               <td>
-              {item['currency'] == "EUR" ? "€" : item["currency"]}{item['price']} 
+                {item['currency'] == 'EUR' ? '€' : item['currency']}
+                {item['price']}
               </td>
               <td>
-              {item['currency'] == "EUR" ? "€" : item["currency"]}{item['pricePerGb']} 
+                {item['currency'] == 'EUR' ? '€' : item['currency']}
+                {item['pricePerGb']}
               </td>
               <td>
                 <div
