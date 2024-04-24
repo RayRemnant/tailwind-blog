@@ -42,13 +42,13 @@ function Table({ data }) {
 
   const sortedData = sortBy
     ? data.sort((a, b) => {
-        const aValue = a['ssdInfo'][sortBy] !== undefined ? a['ssdInfo'][sortBy] : a[sortBy]
-        const bValue = b['ssdInfo'][sortBy] !== undefined ? b['ssdInfo'][sortBy] : b[sortBy]
+        const aValue = a['ssdSpec'][sortBy] !== undefined ? a['ssdSpec'][sortBy] : a[sortBy]
+        const bValue = b['ssdSpec'][sortBy] !== undefined ? b['ssdSpec'][sortBy] : b[sortBy]
         return sortAsc ? aValue - bValue : bValue - aValue
       })
     : data
 
-  const scores = sortedData.map((item) => item['ssdInfo']['score'])
+  const scores = sortedData.map((item) => item['ssdSpec']['score'])
   scores.sort((a, b) => a - b)
 
   const groupSize = Math.ceil(scores.length / 3)
@@ -77,17 +77,17 @@ function Table({ data }) {
               {t('score').capitalize()}
               {getSortingIcon('score', sortBy, sortAsc)}
             </th>
-            <th onClick={() => handleSort('price')}>
+            <th onClick={() => handleSort('eurPrice')}>
               {t('price').capitalize()}
-              {getSortingIcon('price', sortBy, sortAsc)}
+              {getSortingIcon('eurPrice', sortBy, sortAsc)}
             </th>
             <th onClick={() => handleSort('pricePerGb')}>
               {t('price per GB').capitalize()}
               {getSortingIcon('pricePerGb', sortBy, sortAsc)}
             </th>
-            <th onClick={() => handleSort('pricePerformance')}>
+            <th onClick={() => handleSort('normalizedPricePerformanceRatio')}>
               {t('price').capitalize()} / {t('performance').capitalize()}
-              {getSortingIcon('pricePerformance', sortBy, sortAsc)}
+              {getSortingIcon('normalizedPricePerformanceRatio', sortBy, sortAsc)}
             </th>
             <th> {t('shop').capitalize()}</th>
           </tr>
@@ -95,19 +95,14 @@ function Table({ data }) {
         <tbody>
           {sortedData.map((item, index) => (
             <tr key={index}>
-              <td>{item['ssdInfo']['name']}</td>
-              <td>{item['ssdInfo']['capacity']} GB</td>
-              {/* <td>{item['ssdInfo']['readSpeed']} MB/s</td>
-              <td>{item['ssdInfo']['writeSpeed']} MB/s</td> */}
-              <td style={{ color: getScoreColor(item['ssdInfo']['score'], groups) }}>{item['ssdInfo']['score']}</td>
-              <td>
-                {item['currency'] == 'EUR' ? '€' : item['currency']}
-                {item['price']}
-              </td>
-              <td>
-                {item['currency'] == 'EUR' ? '€' : item['currency']}
-                {item['pricePerGb']}
-              </td>
+              <td>{item['ssdSpec']['name']}</td>
+              {/* TODO: add link to ssd-tester full specification page */}
+              <td>{item['ssdSpec']['capacity']} GB</td>
+              {/* <td>{item['ssdSpec']['readSpeed']} MB/s</td>
+              <td>{item['ssdSpec']['writeSpeed']} MB/s</td> */}
+              <td style={{ color: getScoreColor(item['ssdSpec']['score'], groups) }}>{item['ssdSpec']['score']}</td>
+              <td>{item.eurPrice ? '€' + item.eurPrice : '-'}</td>
+              <td>{item.pricePerGb ? '€' + item.pricePerGb : '-'}</td>
               <td>
                 <div
                   style={{
@@ -120,7 +115,7 @@ function Table({ data }) {
                 >
                   <div
                     style={{
-                      width: `${item['pricePerformance']}%`,
+                      width: `${item['normalizedPricePerformanceRatio']}%`,
                       backgroundColor: 'green',
                       height: '100%',
                     }}
@@ -128,11 +123,16 @@ function Table({ data }) {
                 </div>
               </td>
               <td>
-                <a href={item.url} target="_blank" rel="noreferrer" className="relative block w-full h-8">
+                <a
+                  href={`https://www.amazon.${item.region}/dp/${item.asin}?tag=omni-atlas-21`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="relative block w-full h-8"
+                >
                   <img
                     className="absolute inset-0 w-full h-full object-contain opacity-50"
                     width="36px"
-                    src={`https://flagicons.lipis.dev/flags/4x3/${item.country === 'en' ? 'gb' : item.country}.svg`}
+                    src={`https://flagicons.lipis.dev/flags/4x3/${item.region === 'co.uk' ? 'gb' : item.region}.svg`}
                   />
                   <ShoppingCartIcon
                     className="h-6 w-6 absolute inset-0 w-full h-full object-cover opacity-75"
