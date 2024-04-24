@@ -1,12 +1,10 @@
 import Main from './components/Main'
-import getData from './getData'
+import getData from './newGetData'
 
 /* import jsonData from './sampleData.json'
  */
 function getUniqueValues(arr, property) {
   const uniqueValues = new Set() // Using a Set to ensure uniqueness
-
-  console.log('ARR ', arr)
 
   arr.forEach((item) => {
     // Check if the property exists in the object
@@ -21,8 +19,9 @@ function getUniqueValues(arr, property) {
 async function App() {
   //let data = await getData()
   let data = await getData()
+  console.log(data)
 
-  const countries = getUniqueValues(data, 'country')
+  const countries = getUniqueValues(data, 'region')
 
   //console.log(data)
 
