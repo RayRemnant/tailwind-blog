@@ -4854,7 +4854,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-fetch@npm:^3.1.5":
+"cross-fetch@npm:^3.1.5, cross-fetch@npm:^3.1.6":
   version: 3.1.8
   resolution: "cross-fetch@npm:3.1.8"
   dependencies:
@@ -4943,6 +4943,15 @@ __metadata:
   version: 3.1.3
   resolution: "csstype@npm:3.1.3"
   checksum: f593cce41ff5ade23f44e77521e3a1bcc2c64107041e1bf6c3c32adc5187d0d60983292fda326154d20b01079e24931aa5b08e4467cc488b60bb1e7f6d478ade
+  languageName: node
+  linkType: hard
+
+"currency-exchanger-js@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "currency-exchanger-js@npm:1.0.4"
+  dependencies:
+    cross-fetch: "npm:^3.1.6"
+  checksum: caf77847c69228e58b34175c8c7e7d386bd9268bfd889fe87b07ad42c942eb9fa2e251804f4428c63e2c273e9849431914c97a41a2092e460035bb9d1132c06f
   languageName: node
   linkType: hard
 
@@ -11882,6 +11891,7 @@ __metadata:
     autoprefixer: "npm:^10.4.17"
     contentlayer: "npm:0.3.4"
     cross-env: "npm:^7.0.3"
+    currency-exchanger-js: "npm:^1.0.4"
     esbuild: "npm:0.19.11"
     eslint: "npm:^8.56.0"
     eslint-config-next: "npm:14.1.0"
