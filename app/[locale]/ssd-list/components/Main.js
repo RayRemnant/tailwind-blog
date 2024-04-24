@@ -13,7 +13,7 @@ function App({ data, countries }) {
   // Filtered data based on search term and selected countries
   const filteredData = data.filter(
     (item) =>
-      item.ssdInfo.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      item.ssdSpec.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
       (selectedCountries.length === 0 || selectedCountries.includes(item.country)),
   )
 
