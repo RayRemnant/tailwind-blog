@@ -21,11 +21,11 @@ async function App() {
   let data = await getData()
   console.log(data)
 
-  const countries = getUniqueValues(data, 'region')
+  const regions = getUniqueValues(data, 'region')
 
   //console.log(data)
 
-  return <Main data={data} countries={countries} />
+  return <Main data={data} regions={regions} />
 }
 
 export default App

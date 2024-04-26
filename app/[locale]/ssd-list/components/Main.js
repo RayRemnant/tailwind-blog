@@ -6,28 +6,28 @@ import SelectMenu from './SelectMenu.js'
 import { useParams, usePathname } from 'next/navigation'
 import { useTranslation } from 'app/[locale]/i18n/client'
 
-function App({ data, countries }) {
+function App({ data, regions }) {
   const [searchTerm, setSearchTerm] = useState('')
-  const [selectedCountries, setSelectedCountries] = useState([])
+  const [selectedRegions, setSelectedRegions] = useState([])
 
-  // Filtered data based on search term and selected countries
+  // Filtered data based on search term and selected regions
   const filteredData = data.filter(
     (item) =>
       item.ssdSpec.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      (selectedCountries.length === 0 || selectedCountries.includes(item.country)),
+      (selectedRegions.length === 0 || selectedRegions.includes(item.region)),
   )
 
   const locale = useParams()?.locale
   const { t } = useTranslation(locale, '')
 
-  const handleCountryToggle = (country) => {
-    //console.log('COUNTRY: ', country)
-    //console.log(selectedCountries)
-    setSelectedCountries((prevSelectedCountries) => {
-      if (prevSelectedCountries.includes(country)) {
-        return prevSelectedCountries.filter((c) => c !== country)
+  const handleRegionToggle = (region) => {
+    //console.log('COUNTRY: ', region)
+    //console.log(selectedRegions)
+    setSelectedRegions((prevSelectedRegions) => {
+      if (prevSelectedRegions.includes(region)) {
+        return prevSelectedRegions.filter((c) => c !== region)
       } else {
-        return [...prevSelectedCountries, country]
+        return [...prevSelectedRegions, region]
       }
     })
   }
@@ -44,10 +44,10 @@ function App({ data, countries }) {
         />
 
         <SelectMenu
-          selectedCountries={selectedCountries}
-          setSelectedCountries={setSelectedCountries}
-          countries={countries}
-          handleCountryToggle={handleCountryToggle}
+          selectedRegions={selectedRegions}
+          setSelectedRegions={setSelectedRegions}
+          regions={regions}
+          handleRegionToggle={handleRegionToggle}
         />
       </div>
       <Table data={filteredData} />
