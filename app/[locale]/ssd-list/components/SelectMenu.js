@@ -67,7 +67,7 @@ export default function Example({ selectedRegions, setSelectedRegions, handleReg
                     alt={region}
                     className="inline w-6 h-6 "
                   />{' '}
-                  amazon.{region == 'en' ? 'co.uk' : region}
+                  amazon.{region == 'us' ? 'com' : region}
                 </label>
               </div>
             </li>
