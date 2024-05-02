@@ -45,6 +45,9 @@ const x = async () => {
         case 'co.uk':
           listing.eurPrice = await exchanger.convert(listing.price, 'gbp', 'eur')
           break
+        case 'us':
+          listing.eurPrice = await exchanger.convert(listing.price, 'usd', 'eur')
+          break
         default:
           listing.eurPrice = listing.price
       }
