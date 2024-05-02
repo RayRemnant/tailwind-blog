@@ -124,7 +124,7 @@ function Table({ data }) {
               </td>
               <td>
                 <a
-                  href={`https://www.amazon.${item.region}/dp/${item.asin}?tag=omni-atlas-21`}
+                  href={`https://www.amazon.${item.region == 'us' ? 'com' : item.region}/dp/${item.asin}?tag=omni-atlas-21`}
                   target="_blank"
                   rel="noreferrer"
                   className="relative block w-full h-8"
