@@ -1,24 +1,28 @@
 ---
-title: How to delete git history
-summary: hide your hosting secrets and stuff
+title: How to delete the entire git history from a file
+summary: You probably commited some secret key haven't you?
 
 localeid: 'spotify-premium-free'
 
 images: ['/static/images/twitter-card.png']
 
-date: '2024-03-01'
-lastmod: '2024-03-01'
+date: '2024-05-09'
+lastmod: '2024-05-09'
 
-tags: ['spotify', 'music']
+tags: ['git', 'repository']
 authors: ['default']
 
 language: en
-draft: true
+draft: false
 ---
+
+Inside the terminal, type:
 
 `git filter-branch --tree-filter 'rm -f <yourfile>' HEAD`
 
 `git push origin --force --all`
+
+Then, depending on your operating system...
 
 For Linux:
 
@@ -27,7 +31,7 @@ For Linux:
 For Windows:
 `Remove-Item -Path .git\refs\original -Recurse -Force`
 
-finally..
+And finally..
 
 `git reflog expire --expire=now --all`
 `git gc --prune=now --aggressive`
