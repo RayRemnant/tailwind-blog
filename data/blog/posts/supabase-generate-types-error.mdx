@@ -1,0 +1,30 @@
+---
+title: TITLE
+summary: SUMMARY
+
+localeid: 'LOCALEID'
+
+images: ['/static/images/twitter-card.png']
+
+date: '2024-03-01'
+lastmod: '2024-03-01'
+
+tags: ['TAG', 'TAG2']
+authors: ['default']
+
+language: en
+draft: true
+---
+
+If you tried to run:
+`npx supabase gen types typescript --project-id "PROJECT_ID" --schema public > types/supabase.ts`
+and you got this error:
+`failed to retrieve generated types: {"message":"Your account does not have the necessary privileges to access this endpoint. For more details, refer to our documentation https://supabase.com/docs/guides/platform/access-control"}
+Try rerunning the command with --debug to troubleshoot the error.`
+
+Go to https://supabase.com/dashboard/
+Select your project
+In the URL you can find https://supabase.com/dashboard/project/YOUR_PROJECT_ID
+Copy that project id and use it in the command
+
+I mistakenly used the organization id instead of the project id.
