@@ -66,3 +66,18 @@ Open Discord, go to settings, find the BetterDiscord tab > Plugins > Open Plugin
 Drop the `.js` file you download there.
 
 Restart Discord and Spotify, test it out. Enjoy!
+
+## 0PluginLibrary.plugin.js error
+
+If you are getting an error on the ZeresPluginLibrary (which is required for SpotifyListenAlong to function) follow these steps:
+
+Open Discord, go to settings, find the BetterDiscord tab > Plugins > Open Plugins Folder
+
+Open the `0PluginLibrary.plugin.js` file in a text editor, VS Code is good too.
+
+Replace line 3843 to `const Swatch = ColorPickerComponents?.CustomColorButton?.prototype?.render?.call({props: {}})?.type;`
+If you are using VS Code navigating to it is pretty easy:
+1. Press **Ctrl + G** and type "3843"
+2. Replace the line with the string mentioned above
+
+UPDATE: should be fixed in the latest version.
