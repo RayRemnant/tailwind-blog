@@ -1,33 +1,36 @@
 ---
-title: TITLE
-summary: SUMMARY
+title: Running scripts is disabled in VS Code (Windows)
+summary: Fix this PowerShell error or switch to Command Prompt
 
-localeid: 'LOCALEID'
+localeid: 'running-scripts-disabled'
 
 images: ['/static/images/twitter-card.png']
 
 date: '2024-03-01'
 lastmod: '2024-03-01'
 
-tags: ['TAG', 'TAG2']
+tags: ['yarn', 'npm', 'vs-code', 'dev', 'windows']
 authors: ['default']
 
 language: en
-draft: true
+draft: false
 ---
 
-The error:
-yarn : File C:\Program Files\nodejs\yarn.ps1 cannot be 
+## The error
+
+`yarn : File C:\Program Files\nodejs\yarn.ps1 cannot be 
 loaded because running scripts is disabled on this 
 system. For more information, see 
 about_Execution_Policies at 
-https:/go.microsoft.com/fwlink/?LinkID=135170.
+https:/go.microsoft.com/fwlink/?LinkID=135170.`
+
+## The fix
 
 Open PowerShell as Administrator and input this:
 `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted`
 
-Otherwise, just set the command prompt as your default terminal.
+Another solution is to set the command prompt as your default terminal in your IDE.
 
 In VS Code:
 
-Click the downward arrow near the + sign and click Select Default Profile from the menu that pops up.
+Open the terminal, click the downward arrow near the + sign and click _Select Default Profile_ from the menu that pops up.
