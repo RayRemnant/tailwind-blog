@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
+import dayjs from 'dayjs'
 import { ArrowUpIcon, ArrowDownIcon, ShoppingCartIcon } from '@heroicons/react/20/solid'
 import { useParams } from 'next/navigation'
 import { useTranslation } from 'app/[locale]/i18n/client'
+import relativeTime from 'dayjs/plugin/relativeTime'
+import 'dayjs/locale/it' // Import the Spanish locale
+import 'dayjs/locale/de' // Import the German locale
+
+dayjs.extend(relativeTime) // Extend dayjs with the relativeTime plugin
 
 function getScoreColor(score, groups) {
   if (score <= groups[0]) {
@@ -65,25 +71,14 @@ function Table({ data }) {
             <th onClick={() => handleSort('capacity')}>
               {t('capacity').capitalize()} {getSortingIcon('capacity', sortBy, sortAsc)}
             </th>
-            {/* <th onClick={() => handleSort('readSpeed')}>
-              {t('read speed').capitalize()}
-              {getSortingIcon('readSpeed', sortBy, sortAsc)}
-            </th>
-            <th onClick={() => handleSort('writeSpeed')}>
-              {t('write speed').capitalize()}
-              {getSortingIcon('writeSpeed', sortBy, sortAsc)}
-            </th> */}
             <th onClick={() => handleSort('score')}>
-              {t('score').capitalize()}
-              {getSortingIcon('score', sortBy, sortAsc)}
+              {t('score').capitalize()} {getSortingIcon('score', sortBy, sortAsc)}
             </th>
             <th onClick={() => handleSort('eurPrice')}>
-              {t('price').capitalize()}
-              {getSortingIcon('eurPrice', sortBy, sortAsc)}
+              {t('price').capitalize()} {getSortingIcon('eurPrice', sortBy, sortAsc)}
             </th>
             <th onClick={() => handleSort('pricePerGb')}>
-              {t('price per GB').capitalize()}
-              {getSortingIcon('pricePerGb', sortBy, sortAsc)}
+              {t('price per GB').capitalize()} {getSortingIcon('pricePerGb', sortBy, sortAsc)}
             </th>
             <th onClick={() => handleSort('normalizedPricePerformanceRatio')}>
               {t('price').capitalize()} / {t('performance').capitalize()}
@@ -96,13 +91,15 @@ function Table({ data }) {
           {sortedData.map((item, index) => (
             <tr key={index}>
               <td>{item['ssdSpec']['name']}</td>
-              {/* TODO: add link to ssd-tester full specification page */}
               <td>{item['ssdSpec']['capacity']} GB</td>
-              {/* <td>{item['ssdSpec']['readSpeed']} MB/s</td>
-              <td>{item['ssdSpec']['writeSpeed']} MB/s</td> */}
               <td style={{ color: getScoreColor(item['ssdSpec']['score'], groups) }}>{item['ssdSpec']['score']}</td>
-              <td>{item.eurPrice ? '€' + item.eurPrice : '-'}</td>
-              <td>{item.pricePerGb ? '€' + item.pricePerGb : '-'}</td>
+              <td
+                style={{ cursor: 'help' }}
+                title={`${t('updated')} ${dayjs(item.timestamp).locale(locale).fromNow()}`}
+              >
+                {item.eurPrice ? '€' + item.eurPrice.toFixed(2) : '-'}
+              </td>
+              <td>{item.pricePerGb ? '€' + item.pricePerGb.toFixed(2) : '-'}</td>
               <td>
                 <div
                   style={{
