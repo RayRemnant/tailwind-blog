@@ -19,4 +19,12 @@ draft: false
 Having trouble setting the timezone in Windows?
 This will help you set it through the Command Prompt.
 
-Follow the instructions here: https://anakage.com/blog/how-to-setup-time-zone-in-windows-system/
+Use `tzutil /s <DESIRED TIMEZONE STRING>`
+
+You can get the list of timezones with the command `tzutil /l`
+
+So for example `tzutil /s Central European Standard Time` will set the timezone to UTC+01:00
+
+To get the current timezone type `tzutil /g`
+
+For more gibberish info packed with ads, see here: https://anakage.com/blog/how-to-setup-time-zone-in-windows-system/
