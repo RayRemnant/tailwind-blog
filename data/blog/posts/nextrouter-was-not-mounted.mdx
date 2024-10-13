@@ -1,0 +1,23 @@
+---
+title: NextRouter was not mounted
+summary: lil error caused by outdated library
+
+localeid: 'nextrouter-not-mounted'
+
+images: ['/static/images/twitter-card.png']
+
+date: '2024-10-13'
+lastmod: '2024-10-13'
+
+tags: ['coding', 'nextjs', 'react]
+authors: ['default']
+
+language: en
+draft: false
+---
+
+Error: NextRouter was not mounted. https://nextjs.org/docs/messages/next-router-not-mounted
+
+change `import { useRouter } from 'next/router';` to `import { useRouter } from 'next/navigation';`
+
+all good.
