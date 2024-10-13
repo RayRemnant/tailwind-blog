@@ -1,0 +1,29 @@
+---
+title: How to redirect in NextJS (client side)
+summary: Sometimes documentation is not entirely clear
+
+localeid: 'nextjs-client-redirect'
+
+images: ['/static/images/twitter-card.png']
+
+date: '2024-10-05'
+lastmod: '2024-10-05'
+
+tags: ['nextjs', 'coding']
+authors: ['default']
+
+language: en
+draft: false
+---
+
+`
+'use client';
+
+import { useRouter } from 'next/navigation'
+
+export default function Page() {
+  const router = useRouter()
+  router.push('/account-overview')
+}
+
+`
