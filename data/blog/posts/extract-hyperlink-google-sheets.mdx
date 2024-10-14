@@ -26,29 +26,35 @@ function GETLINK(input){
 }
 ```
 
-Courtesy of (https://stackoverflow.com/a/67206954)[https://stackoverflow.com/a/67206954]
+Courtesy of [MrG](https://stackoverflow.com/users/546548/mrg) on this [Stack Overflow question](https://stackoverflow.com/a/67206954)
 
 Back to your sheet, in a new column write `=GETLINK(B2)`, replace `B2` with the column you want to extract the hyperlink from and the row it starts at.
 
 There will be an error, but don't worry, it's necessary for the drag option to work and set the rest of the cells as `B3`, `B4`, etc.
 
-Once you've filled all the necessary cells, select your column and press CTRL + H, this will open up the Find and replace window (if the shortcut does not work, go to Edit > Find and replace - should be the last option).
+Once you've filled all the necessary cells, **select your column** and press `CTRL + H`
 
-Inside the "Find" input field, paste `\(([A-Z][0-9]+)\)`.
+The **Find and replace** window should open up, if not, go to `Edit > Find and replace` (should be the last option).
 
-Inside the "Replace with" input field, paste `("$1")`.
+Inside the **Find** input field, paste `\(([A-Z][0-9]+)\)`.
 
-Select `Search using regular expressions` and `Also search within formulas`.
+Inside the **Replace with** input field, paste `("$1")`.
+
+Select **Search using regular expressions** and **Also search within formulas**.
 
 This will effectively replace every `B2`, `B3` inside your formula with `"B2"`, `"B3"`, making the custom formula `GETLINK` work.
 
-Your links should now appear in the new created column.
+The new created column should be filled with the desired links.
 
-You can copy the column, select your previous column and Right Click > Paste Special > Values Only.
+## How to copy the links somewhere else (without the formula)
 
-The new column will not have an hyperlink associated with them though.
+Now, you probably want to copy the links somewhere else and avoid using the formula for them to show up.
 
-To fix this, back to Apps Script create a new file `convertToHyperlinksCtrlKStyle` and paste this code:
+To do this, **select the the newly populated column**, **go to a new empty column** and **Right Click > Paste Special > Values Only**.
+
+This new column will have the **links as text with no hyperlink associated with them**.
+
+To fix this, **back to Apps Script** create a new file `convertToHyperlinksCtrlKStyle` and paste this code:
 
 ```
 function convertToHyperlinksCtrlKStyle() {
@@ -75,4 +81,8 @@ return regex.test(url);
 
 Edit your column `B2:B`, the source of the text links, and the target column `2` which is the same as `B` in this case.
 
-After that, click the Run button on the upper menu, you should see the changes on your sheet. Remember that this will work on your active sheet.
+After that, **click the Run button** on the upper menu.
+
+Done! You should see the changes on your sheet.
+
+Remember that this will work on your currently active sheet.
