@@ -26,11 +26,11 @@ function GETLINK(input){
 }
 ```
 
-> Courtesy of [MrG](https://stackoverflow.com/users/546548/mrg) on this [Stack Overflow question](https://stackoverflow.com/a/67206954)
+_Courtesy of [MrG](https://stackoverflow.com/users/546548/mrg) on this [Stack Overflow question](https://stackoverflow.com/a/67206954)_
 
 Back to your sheet, **in a new column write `=GETLINK(B2)`** (replace `B2` with the column you want to extract the hyperlink from and the row it starts at).
 
-==There will be an error==, but we will fix it soon.
+There will be an error, but we will fix it soon.
 
 Now, **drag the fill handle** (the small square at the bottom-right corner of a selected cell) **to autofill your desired cells**.
 
@@ -46,7 +46,7 @@ Check :white_check_mark: **Search using regular expressions** and :white_check_m
 
 This will effectively replace every `B2`, `B3` inside your formula with `"B2"`, `"B3"`, making the custom formula `GETLINK` work.
 
-> The new created column should be filled with the desired links.
+The new column should be filled with the desired links!
 
 ## How to copy the links somewhere else (without the formula)
 
