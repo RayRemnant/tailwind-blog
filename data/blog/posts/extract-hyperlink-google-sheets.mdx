@@ -16,9 +16,9 @@ language: en
 draft: false
 ---
 
-First of all, in the upper menu bar go to Extensions -> Apps Script
+First of all, in the **upper menu bar** go to **Extensions -> Apps Script**.
 
-add this function (you can safely delete whatever was there if you've never opened Apps Script before):
+Then, **add the following function** (you can safely delete whatever was there if you've never opened Apps Script before):
 
 ```
 function GETLINK(input){
@@ -26,35 +26,37 @@ function GETLINK(input){
 }
 ```
 
-Courtesy of [MrG](https://stackoverflow.com/users/546548/mrg) on this [Stack Overflow question](https://stackoverflow.com/a/67206954)
+> Courtesy of [MrG](https://stackoverflow.com/users/546548/mrg) on this [Stack Overflow question](https://stackoverflow.com/a/67206954)
 
-Back to your sheet, in a new column write `=GETLINK(B2)`, replace `B2` with the column you want to extract the hyperlink from and the row it starts at.
+Back to your sheet, **in a new column write `=GETLINK(B2)`** (replace `B2` with the column you want to extract the hyperlink from and the row it starts at).
 
-There will be an error, but don't worry, it's necessary for the drag option to work and set the rest of the cells as `B3`, `B4`, etc.
+==There will be an error==, but we will fix it soon.
 
-Once you've filled all the necessary cells, **select your column** and press `CTRL + H`
+Now, **drag the fill handle** (the small square at the bottom-right corner of a selected cell) **to autofill your desired cells**.
 
-The **Find and replace** window should open up, if not, go to `Edit > Find and replace` (should be the last option).
+Then **select your column** and press `CTRL + H`.
+
+The **Find and replace** window should open up, alternatively, go to `Edit > Find and replace` (should be the last option).
 
 Inside the **Find** input field, paste `\(([A-Z][0-9]+)\)`.
 
 Inside the **Replace with** input field, paste `("$1")`.
 
-Select **Search using regular expressions** and **Also search within formulas**.
+Check :white_check_mark: **Search using regular expressions** and :white_check_mark: **Also search within formulas**.
 
 This will effectively replace every `B2`, `B3` inside your formula with `"B2"`, `"B3"`, making the custom formula `GETLINK` work.
 
-The new created column should be filled with the desired links.
+> The new created column should be filled with the desired links.
 
 ## How to copy the links somewhere else (without the formula)
 
 Now, you probably want to copy the links somewhere else and avoid using the formula for them to show up.
 
-To do this, **select the the newly populated column**, **go to a new empty column** and **Right Click > Paste Special > Values Only**.
+First, **select the the newly populated column**, then **go to a new empty column** and **Right Click > Paste Special > Values Only**.
 
-This new column will have the **links as text with no hyperlink associated with them**.
+The result will be a column with links as text, but no hyperlink associated with them.
 
-To fix this, **back to Apps Script** create a new file `convertToHyperlinksCtrlKStyle` and paste this code:
+To fix this, **in the Apps Script section create a new file** `convertToHyperlinksCtrlKStyle` and paste this code:
 
 ```
 function convertToHyperlinksCtrlKStyle() {
